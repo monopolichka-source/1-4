@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наше производство</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ШАПКА -->
+<header class="header">
+    <div class="container header__container">
+        
+        <!-- Логотип -->
+        <div class="header__logo-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Логотип" class="logo__img">
+            </a>
+        </div>
+
+        <!-- Кнопка гамбургера (видна только на мобилках) -->
+        <button class="header__burger-btn" id="burger-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (на мобилках будет выезжать сбоку) -->
+        <nav class="menu header__menu-wrapper" id="mobile-menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="about.html" class="menu__link">о нас</a></li>
+                <li class="menu__item"><a href="events.html" class="menu__link">события</a></li>
+                <li class="menu__item"><a href="catalog-view.html" class="menu__link">каталог</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<main class="main">
+    <div class="container">
+        <section class="factory-block factory-block--right">
+            <h1 class="factory-main-title">ЗАВОД ДЭЙБЭТ</h1>
+            <div class="factory-card-media ui-card-grey">
+                <div class="factory-card-media__label">
+                    <span>ВХОД НА ЗАВОД</span>
+                </div>
+                <img src="assets/entrance.png" alt="Вход на завод Дэйбэт" class="factory-card-media__img">
+            </div>
+        </section>
+        <section class="honor-board">
+            <h2 class="honor-board__title">ДОСКА ПОЧЁТА</h2>
+            <div class="honor-board__grid">
+                <!-- Сотрудник 1 -->
+                <div class="employee-card">
+                    <div class="employee-card__avatar">
+                        <img src="assets/stas.png" alt="Стас">
+                    </div>
+                    <p class="employee-card__name">Стас</p>
+                </div>
+                <!-- Сотрудник 2 -->
+                <div class="employee-card">
+                    <div class="employee-card__avatar">
+                        <img src="assets/yuri.png" alt="Юрий">
+                    </div>
+                    <p class="employee-card__name">Юрий</p>
+                </div>
+                <!-- Сотрудник 3 -->
+                <div class="employee-card">
+                    <div class="employee-card__avatar">
+                        <img src="assets/ivan.png" alt="Иван">
+                    </div>
+                    <p class="employee-card__name">Иван</p>
+                </div>
+                <!-- Сотрудник 4 -->
+                <div class="employee-card">
+                    <div class="employee-card__avatar">
+                        <img src="assets/alexey.png" alt="Алексей">
+                    </div>
+                    <p class="employee-card__name">Алексей</p>
+                </div>
+                <!-- Сотрудник 5 -->
+                <div class="employee-card">
+                    <div class="employee-card__avatar">
+                        <img src="assets/elena.png" alt="Елена">
+                    </div>
+                    <p class="employee-card__name">Елена</p>
+                </div>
+                <!-- Сотрудник 6 -->
+                <div class="employee-card">
+                    <div class="employee-card__avatar">
+                        <img src="assets/zahar.png" alt="Захар">
+                    </div>
+                    <p class="employee-card__name">Захар</p>
+                </div>
+            </div>
+        </section>
+        <section class="factory-block factory-block--left">
+            <div class="factory-card-media ui-card-grey">
+                <div class="factory-card-media__label">
+                    <span>ФЕРМА КРИСТАЛЛОВ</span>
+                </div>
+                <img src="assets/crystals.png" alt="Ферма кристаллов" class="factory-card-media__img">
+            </div>
+        </section>
+        <section class="factory-block factory-block--right">
+            <div class="factory-card-media ui-card-grey">
+                <div class="factory-card-media__label">
+                    <span>ОФИСЫ</span>
+                </div>
+                <img src="assets/offices.png" alt="Офисы" class="factory-card-media__img">
+            </div>
+        </section>
+        <section class="factory-block factory-block--left">
+            <div class="factory-card-media ui-card-grey">
+                <div class="factory-card-media__label">
+                    <span>КОНВЕЙЕРЫ</span>
+                </div>
+                <img src="assets/conveyors.png" alt="Конвейеры" class="factory-card-media__img">
+            </div>
+        </section>
+    </div>
+</main>
+<!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__col"><h4 class="footer__title">Дэйбэт</h4>
+                    <ul class="footer__list">
+                        <li><a href="about.html" class="footer__link">О нас</a></li>
+                        <li><a href="events.html" class="footer__link">События</a></li>
+                        <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col"><h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+79001001010" class="footer__link">+7 900 100-10-10</a></li>
+                        <li><a href="mailto:optika@Batday.ru" class="footer__link">optika@Batday.ru</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col"><h4 class="footer__title">Офис</h4>
+                    <p class="footer__text">г. Летучий Новгород</p>
+                    <p class="footer__text">ул. Клыковная, д. 666</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__credits">
+                    <p>Выполнила <span class="footer__highlight">Пензина Анастасия</span></p>
+                    <p>Куратор <span class="footer__highlight">Евдокимов Стас</span></p>
+                    <p>Технолог <span class="footer__highlight">Сыров Юрий</span></p>
+                </div>
+                <div class="footer__group"><p>Группа: <span class="footer__highlight">25ндиз-2</span></p></div>
+                <div class="footer__logo"><img src="assets/shd.svg" alt="Школа дизайна" class="footer__logo-img"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+// ЛОГИКА МОБИЛЬНОГО БУРГЕР-МЕНЮ
+const burgerBtn = document.getElementById('burger-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const bodyElement = document.body;
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+        // Переключаем класс анимации палочек в крестик
+        this.classList.toggle('burger--active');
+        // Переключаем выезд панели меню
+        mobileMenu.classList.toggle('menu--open');
+        // Блокируем прокрутку сайта на фоне, пока открыто меню
+        bodyElement.classList.toggle('no-scroll');
+    });
+
+    // Закрываем меню, если пользователь кликнул на ссылку
+    const menuLinks = mobileMenu.querySelectorAll('.menu__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('burger--active');
+            mobileMenu.classList.remove('menu--open');
+            bodyElement.classList.remove('no-scroll');
+        });
+    });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,3576 @@
+@font-face {
+    font-family: 'Akony';
+    src: url('fonts/akony.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --bg-color: #ffffff;
+    --dark-color: #1a1a1a;
+    --accent-color: #007bff;
+    --text-color: #333333;
+    --gray-light: #f8f9fa;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: var(--text-color);
+    background-color: #e5e5e5;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.main {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    padding: 20px 0;
+}
+
+.header__container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.header__logo-wrapper,
+.header__menu-wrapper {
+    background-color: #ffffff;
+    border-radius: 16px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.header__logo-wrapper {
+    padding: 0 25px;
+    flex-shrink: 0;
+}
+
+.logo__img {
+    height: 35px;
+    display: block;
+}
+
+.header__menu-wrapper {
+    flex-grow: 1;
+    padding: 0 50px;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: #3b375a;
+    font-size: 24px;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+.menu__link:hover {
+    opacity: 0.7;
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 60px 0 40px 0;
+    color: #333333;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.footer__title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #999999;
+    margin-bottom: 15px;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__list li {
+    margin-bottom: 10px;
+}
+
+.footer__link, 
+.footer__text {
+    font-size: 15px;
+    color: #3b375a;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.footer__link:hover {
+    opacity: 0.7;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-top: 30px;
+    font-size: 14px;
+    color: #999999;
+    line-height: 1.6;
+}
+
+.footer__credits p,
+.footer__group p {
+    margin: 0 0 5px 0;
+}
+
+.footer__highlight {
+    color: #3b375a; 
+}
+
+.footer__logo-img {
+    height: 45px;
+    display: block;
+}
+
+.hero-bento {
+    padding: 30px 0 10px 0;
+}
+
+.hero-card {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+}
+
+.hero-bento .bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 1.3fr;
+    grid-auto-rows: 200px;
+    gap: 20px;
+    width: 100%;
+}
+
+.bento-card--catalog-main {
+    grid-area: 1 / 1;
+    background-color: #ffffff;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.bento-card--catalog-main .bento-card__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    z-index: 1;
+    display: block;
+}
+
+.bento-card--catalog-main .bento-btn-round--left {
+    z-index: 3;
+}
+
+.bento-card--avatar-main {
+    grid-area: 1 / 2;
+    background-color: #ffffff;
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 0; 
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.bento-card--avatar-main .bento-card__avatar-img {
+    width: 100%;      
+    max-width: 190px; 
+    height: auto;
+    display: block;
+    margin-top: -5px;  
+    transition: transform 0.3s ease;
+}
+.bento-card--avatar-main:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+.bento-card--avatar-main:hover .bento-card__avatar-img {
+    transform: scale(1.04);
+}
+.bento-card--slogan {
+    grid-area: 1 / 3 / span 2 / 3;
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 40px 35px 0 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    overflow: visible !important; 
+    margin-bottom: 30px; 
+}
+.bento-card__slogan-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.bento-card__slogan-title {
+    font-family: 'Akony', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: #756AAA;
+    line-height: 1.1;
+    margin: 0 0 15px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.bento-card__slogan-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    color: #888898;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+    cursor: default; 
+}
+
+.bento-card__slogan-media {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.bento-card__slogan-img {
+    width: 100%;
+    max-width: 290px;
+    height: auto;
+    display: block;
+}
+
+.bento-card--slogan .bento-btn-round--bottom {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(220, 107, 67, 0.2);
+    
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.bento-card--slogan .bento-btn-round--bottom:hover {
+    transform: translateX(-50%) scale(1.08); 
+}
+
+.bento-card--production-main {
+    grid-area: 2 / 1 / 2 / span 2; 
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    overflow: visible !important; 
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card--production-main:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.bento-card__prod-title {
+    font-family: 'Akony', sans-serif;
+    font-size: 28px;
+    color: #756AAA;
+    line-weight: 1.1;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    max-width: 95%;
+}
+
+.bento-card--production-main .bento-btn-rect {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+/* БЛОК СОБЫТИЙ */
+.events {
+    padding: 20px 0 10px 0; 
+    overflow: hidden;
+}
+
+.events__title {
+     font-family: 'Akony', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #3b375a;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.events__list {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.events__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: flex 0.4s ease-in-out;
+}
+
+.events__poster-wrapper {
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    aspect-ratio: 4 / 5;
+}
+
+.events__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.events__btn {
+    background-color: #dc6b43;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 45px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+/* ==========================================
+   ЭФФЕКТЫ ДЛЯ БОЛЬШИХ ЭКРАНОВ (КОМПЬЮТЕРЫ)
+   ========================================== */
+@media (min-width: 769px) {
+    .events__item:hover {
+        flex: 1.5; 
+    }
+    .events__item:hover .events__btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ЭКРАНЫ ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .events {
+        padding: 40px 0;
+    }
+    .events__title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+    .events__list {
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+    .events__list::-webkit-scrollbar {
+        display: none;
+    }
+    .events__item {
+        flex: 0 0 75%;
+        scroll-snap-align: center;
+    }
+    .events__btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding: 10px 30px;
+        font-size: 14px;
+        width: 80%;
+        text-align: center;
+    }
+    .events__poster-wrapper {
+        border-radius: 20px;
+    }
+}
+.collection {
+    padding: 60px 0 80px 0;
+}
+.collection__title {
+     font-family: 'Akony', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #3b375a;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.collection__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+}
+
+.collection__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.collection__img-wrapper {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection__img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.collection__btn-plus {
+    position: absolute;
+    bottom: -25px; 
+    left: 45%;
+    width: 60px; 
+    height: 60px; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border: none !important; 
+}
+
+.collection__btn-plus img {
+    width: 40px;  
+    height: 40px;
+    display: block;
+}
+
+.collection__btn-plus:hover {
+    transform: scale(1.08);
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ЭКРАНЫ ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .collection {
+        padding: 40px 0 60px 0;
+    }
+
+    .collection__title {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .collection__grid {
+        grid-template-columns: 1fr;
+        gap: 50px 0;
+    }
+
+    .collection__img-wrapper {
+        border-radius: 20px;
+        padding: 24px;
+    }
+}
+
+.about-hero {
+    padding: 40px 0;
+}
+
+.about-hero__card {
+    background-color: #E7E7E7;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 60px;
+}
+
+.about-hero__content {
+    max-width: 400px; 
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero__title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #1a163a;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.about-hero__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555171;
+    font-weight: 400;
+}
+
+.about-hero__image-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    z-index: 1;
+}
+
+.about-hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ СМАРТФОНОВ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 20px 0;
+    }
+
+    .about-hero__card {
+        flex-direction: column;
+        padding: 30px 20px;
+        min-height: auto;
+        gap: 30px;
+    }
+
+    .about-hero__content {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .about-hero__title {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .about-hero__text {
+        font-size: 15px;
+    }
+    .about-hero__image-wrapper {
+        position: static; 
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .about-hero__img {
+        border-radius: 16px;
+    }
+}
+
+/* БЛОК НАШ ЗАВОД */
+.factory-section {
+    padding: 40px 0 60px 0;
+}
+
+.factory-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 0;
+    background-color: #ffffff;
+    border-radius: 28px;
+    overflow: visible !important; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    margin-bottom: 40px; 
+}
+
+.factory-image {
+    width: 100%;
+    height: 100%;
+}
+
+.factory-image__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 28px !important;
+    border-bottom-left-radius: 28px !important;
+}
+
+.factory-card {
+    background-color: #0b0a11;
+    color: #ffffff;
+    padding: 50px 60px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+     border-top-right-radius: 28px !important;
+    border-bottom-right-radius: 28px !important;
+}
+
+.factory-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.factory-card__content {
+    max-width: 340px;
+}
+
+.factory-card__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #5d54a4;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.factory-card__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cccccc;
+}
+
+.factory-card__blueprint {
+    max-width: 240px;
+}
+
+.factory-card__blueprint-img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.factory-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.factory-stats__num {
+    font-size: 28px;
+    font-weight: 700;
+    color: #5d54a4;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.factory-stats__desc {
+    font-size: 13px;
+    color: #888888;
+    line-height: 1.4;
+}
+
+.factory-card__btn-arrow {
+    position: absolute;
+    bottom: -25px; 
+    right: -10px;   
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .factory-grid {
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+    }
+
+    .factory-image {
+        height: 250px;
+    }
+
+    .factory-card {
+        padding: 40px 20px 60px 20px;
+    }
+
+    .factory-card__top {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .factory-card__content {
+        max-width: 100%;
+    }
+
+    .factory-card__blueprint {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .factory-stats {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .factory-card__btn-arrow {
+        right: 20px;
+    }
+}
+
+.ui-card {
+    background-color: #f0f0f4;
+    border-radius: 28px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.about-features-section {
+    padding: 30px 0;
+}
+
+.about-features-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+    gap: 24px;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 420px;
+}
+
+.feature-card__title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #5d54a4;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.feature-card__body {
+    flex-grow: 1;
+}
+
+.feature-card__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4a4a5a;
+    margin-bottom: 15px;
+}
+
+.feature-card__footer {
+    margin-top: auto;
+}
+
+.feature-card__stat-num {
+    font-size: 32px;
+    font-weight: 700;
+    color: #5d54a4;
+    display: block;
+}
+
+.feature-card__stat-desc {
+    font-size: 13px;
+    color: #888898;
+}
+
+.feature-card--sketches {
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.sketch-wrapper {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+}
+
+.sketch-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.7;
+}
+
+.about-manifesto-section {
+    padding: 30px 0;
+}
+
+.manifesto-block {
+    background-color: #635aa4; 
+    border-radius: 32px;
+    padding: 60px 50px;
+    text-align: left;
+}
+
+.manifesto-block__text {
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 1.3;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.about-values-section {
+    padding: 30px 0 60px 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.values-grid__main-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #5d54a4;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.values-grid__items-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value-item__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.value-item__desc {
+    font-size: 13px;
+    color: #555565;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .about-features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        min-height: auto;
+    }
+
+    .feature-card--sketches {
+        gap: 30px;
+    }
+
+    .manifesto-block {
+        padding: 40px 25px;
+    }
+
+    .manifesto-block__text {
+        font-size: 22px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .values-grid__items-col {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+/* СТРАНИЦА ЗАВОДА */
+.factory-main-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #3b375a;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.factory-block {
+    display: flex;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.factory-block--right { justify-content: flex-end; }
+.factory-block--left { justify-content: flex-start; }
+
+.factory-card-media {
+    position: relative;
+    width: 75%;
+    height: 400px;
+    border-radius: 28px;
+    overflow: visible;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.factory-card-media__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    display: block;
+}
+
+.factory-card-media__label {
+    position: absolute;
+    background-color: #f0f0f4;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    z-index: 5;
+    top: 80%;
+    transform: translateY(-20%);
+}
+
+.factory-block--right .factory-card-media__label {
+    left: -180px;
+}
+
+.factory-block--left .factory-card-media__label {
+    right: -180px;
+}
+
+.factory-card-media__label span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #3b375a;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.honor-board {
+    margin: 80px 0;
+}
+
+.honor-board__title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #3b375a;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.honor-board__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+}
+
+.employee-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.employee-card__avatar {
+    width: 100%;
+    max-width: 180px;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.employee-card:hover .employee-card__avatar {
+    transform: scale(1.05);
+}
+
+.employee-card__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.employee-card__name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3b375a;
+    margin: 0;
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .factory-main-title { font-size: 32px; }
+    .honor-board__title { font-size: 28px; }
+
+    .factory-card-media {
+        width: 100%;
+        height: 250px;
+    }
+
+    .factory-card-media__label {
+        top: auto;
+        bottom: -15px;
+        transform: none;
+        padding: 12px 24px;
+        border-radius: 12px;
+    }
+
+    .factory-block--right .factory-card-media__label { left: 15px; }
+    .factory-block--left .factory-card-media__label { right: 15px; }
+    
+    .factory-card-media__label span { font-size: 15px; }
+
+    .honor-board__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 15px;
+    }
+
+    .employee-card__avatar { max-width: 130px; }
+    .employee-card__name { font-size: 15px; }
+}
+
+.main-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.error-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.error-hero__avatar {
+    width: 320px;
+    height: auto;
+}
+
+.error-hero__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.error-hero__digits {
+    font-size: 240px;
+    font-weight: 900;
+    color: #0b0a11;
+    line-height: 0.8;
+    margin: 0;
+    letter-spacing: -5px;
+}
+
+.error-message {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a163a;
+    margin: 0 0 50px 0;
+}
+
+.error-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.error-actions__wing {
+    width: 100px;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.error-actions__wing img {
+    width: 100%;
+    height: auto;
+}
+
+.error-btn-back {
+    background-color: #dc6b43;
+    color: #ffffff;
+    border: none;
+    padding: 16px 65px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(220, 107, 67, 0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
+.error-btn-back:hover {
+    background-color: #c45630;
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ ЭКРАНОВ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .main-error {
+        padding: 40px 0;
+    }
+
+    .error-hero {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .error-hero__avatar {
+        width: 180px;
+    }
+
+    .error-hero__digits {
+        font-size: 120px;
+        letter-spacing: -2px;
+    }
+
+    .error-message {
+        font-size: 20px;
+        margin-bottom: 40px;
+        padding: 0 15px;
+    }
+
+    .error-actions {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .error-actions__wing {
+        width: 70px;
+    }
+
+    .error-btn-back {
+        width: 80%;
+        padding: 14px 0;
+        font-size: 16px;
+    }
+}
+/* СТРАНИЦА СОБЫТИЙ */
+.events-page-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #3b375a;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.events-block {
+    margin-bottom: 50px;
+}
+
+.events-block--last {
+    margin-bottom: 80px;
+}
+
+.events-block__subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3b375a;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.events-posters-three,
+.events-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.events-posters-three__item {
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    aspect-ratio: 4 / 5;
+    transition: transform 0.3s ease; 
+}
+
+.events-posters-three__item:hover,
+.collection-card:hover .collection-card__poster {
+    transform: scale(1.03);
+}
+
+.events-posters-three__item img,
+.collection-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.events-collection-grid .collection-item img {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.collection-card__poster {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.collection-card__poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.collection-card:hover .collection-card__poster {
+    transform: scale(1.03);
+}
+
+.banner-dave {
+    background-color: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    padding: 40px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.banner-dave__media {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+.banner-dave__img {
+    width: 180%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.banner-dave__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 180px;
+}
+
+.banner-dave__name {
+    font-size: 54px;
+    font-weight: 900;
+    color: #3b375a;
+    margin: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.banner-dave__btn-go {
+    background-color: #dc6b43;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 50px;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.banner-dave__btn-go:hover {
+    background-color: #c45630;
+    transform: scale(1.03);
+}
+
+.exhibition-banner {
+    position: relative;
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    aspect-ratio: 2.3 / 1;
+}
+
+.exhibition-banner__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.exhibition-banner__btn-arrow {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background-color: #dc6b43;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(220, 107, 67, 0.4);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.exhibition-banner__btn-arrow:hover {
+    background-color: #c45630;
+    transform: scale(1.05);
+}
+
+.exhibition-banner__btn-arrow img {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ ЭКРАНОВ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .events-page-title { font-size: 36px; }
+
+    .events-posters-three,
+    .events-collection-grid {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 15px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .events-posters-three::-webkit-scrollbar,
+    .events-collection-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .events-posters-three__item,
+    .collection-item {
+        flex: 0 0 75%;
+    }
+
+    .banner-dave {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .banner-dave__content {
+        align-items: center;
+    }
+
+    .banner-dave__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .banner-dave__btn {
+        align-self: center;
+        margin: 0;
+    }
+
+    .exhibition-banner {
+        aspect-ratio: auto;
+        height: 200px;
+    }
+
+    @media (min-width: 769px) {
+
+    .events-posters-three__item:hover,
+    .collection-card:hover .collection-card__poster {
+        transform: scale(1.03);
+    }
+}
+}
+/* СТРАНИЦА ДЭЙВА */
+.dave-page {
+    padding: 40px 0 80px 0;
+     background: radial-gradient(circle, #f7f7f8 0%, #ececed 100%);
+}
+
+.dave-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    padding: 60px 80px;
+    margin-bottom: 60px;
+    background-color: #ffffff;
+    border-radius: 28px;
+    overflow: hidden; 
+}
+
+.dave-hero__title {
+    font-size: 84px;
+    font-weight: 900;
+    color: #3b375a;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+.dave-hero__subtitle {
+    font-size: 20px;
+    color: #555565;
+    margin: 0;
+}
+
+.dave-hero__img {
+    width: 180%;
+    max-width: 936px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+}
+
+.dave-history.ui-card {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 60px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    margin: 40px 0;
+}
+
+.dave-history__grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1.1fr; 
+    gap: 40px;
+    align-items: center;
+}
+
+.dave-history__title {
+    font-size: 24px;
+    color: #1a163a;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.dave-history__col {
+    display: flex;
+    flex-direction: column;
+}
+
+.dave-history__lead {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a163a;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.dave-history__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555565;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.dave-history__media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dave-history__center-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.dave-evolution {
+    background-color: #ffffff;
+    padding: 60px;
+    margin-bottom: 60px;
+}
+
+.dave-evolution__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.dave-evolution__title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #3b375a;
+    margin-bottom: 25px;
+}
+
+.dave-evolution__text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4a4a5a;
+    margin-bottom: 15px;
+}
+
+.dave-evolution__media {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.dave-evolution__img {
+    width: 45%;
+    height: auto;
+    object-fit: contain;
+}
+
+.dave-timeline__block {
+    background-color: #211942;
+    border-radius: 28px;
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.dave-timeline__title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    max-width: 50%;
+}
+
+.dave-timeline__steps {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 15px;
+    color: #8c86ac;
+}
+
+.dave-timeline__divider {
+    color: #4e4675;
+}
+
+.dave-timeline__step--active {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .dave-hero {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+     .dave-history.ui-card {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .dave-hero__title { font-size: 48px; }
+    .dave-hero__img { margin: 30px auto 0 auto; }
+
+    .dave-history__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .dave-history__media {
+        order: -1;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .dave-evolution__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dave-timeline__block {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+        padding: 35px 20px;
+    }
+
+    .dave-timeline__title { max-width: 100%; }
+}
+
+/*каталог */
+
+.bento-catalog {
+    padding: 40px 0 80px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 1.3fr; 
+    grid-auto-rows: 210px; 
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+    grid-template-areas: 
+        "block1 block2 block3"
+        "block4 block4 block3"
+        "block6 block6 block5";
+}
+
+.bento-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 28px;
+    text-decoration: none;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.bento-card img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.bento-card--col2025 {
+    grid-area: block1;
+
+    background: #dc6b43;
+    padding: 30px;
+
+    justify-content: flex-start;
+}
+
+.bento-card--col2025 .bento-card__title {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 0.9;
+    color: #1a163a;
+}
+
+.bento-card__bg-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bento-card__bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+}
+
+.bento-btn-round,.factory-card__btn-arrow {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #E5E5E5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    z-index: 5;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.bento-btn-round img,.factory-card__btn-arrow img {
+    width: 40px;  
+    height: 40px;
+    display: block;
+}
+
+.bento-btn-round:hover,.factory-card__btn-arrow:hover {
+    transform: scale(1.08);
+    background-color: #f7f7f8;
+}
+.bento-btn-round--left {
+    bottom: -2px;
+    left: -1px;
+}
+
+.bento-btn-round--plus {
+    bottom:-2px;
+    right: -1px;
+}
+
+.bento-btn-round--bottom {
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bento-btn-round--bottom:hover {
+    transform: translateX(-50%) scale(1.08);
+}
+
+.bento-btn-rect {
+    background-color: #dc6b43 !important;
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    width: 150px;
+    height: 46px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute; 
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    transform-style: preserve-3d;
+}
+
+.bento-btn-rect::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 15px);
+    height: calc(100% + 15px);
+    background-color: #E5E5E5 !important;
+    border-radius: 16px; 
+    transform: translate3d(0, 0, -1px); 
+    backface-visibility: hidden; 
+}
+.bento-btn-rect:hover {
+    background-color: #c45630 !important;
+}
+.bento-card--orbit-dark .bento-btn-rect {
+    top: 5px;
+    right: 5px;
+}
+
+.bento-card--orbit-light .bento-btn-rect {
+    bottom: 10px;
+    right: 5px;
+}
+
+.bento-card--purple {
+    grid-area: block2;
+    padding: 30px 20px 0 20px;
+    background: #756AAA;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    justify-content: flex-start;
+    text-align: center;
+    overflow: hidden;
+}
+
+.bento-card--purple .bento-card__subtitle {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    font-family: 'Akony', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+.bento-card__purple-bat {
+    width: 110%;
+    max-width: none;
+    height: auto;
+    display: block; 
+    margin-top: -50px; 
+    object-fit: contain;
+    z-index: 1;
+}
+
+.bento-card--pixel {
+    grid-area: block3;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bento-card__title-pixel {
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 900;
+    color: #635aa4;
+}
+
+.bento-card__desc {
+    max-width: 220px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #888898;
+}
+
+.bento-card__pixel-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 60%;
+    padding: 20px 0;
+}
+
+.bento-card--orbit-dark {
+    grid-area: block4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #16151a;
+    padding: 0;
+}
+
+.bento-card__cut-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 25px 35px 0;
+}
+
+.bento-card__label h4 {
+    margin-bottom: 4px;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: 'Akony', sans-serif;
+    text-transform: uppercase;
+}
+
+.bento-card__label p {
+    font-size: 12px;
+    color: #666675;
+}
+
+.bento-card__blueprint-main {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.bento-card__blueprint-main img {
+    max-width: 85%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.bento-card--tech {
+    grid-area: block5;
+    background-color: #dedede;
+    border-radius: 28px;
+    padding: 35px 35px 45px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: visible;
+}
+
+.bento-card__title-tech {
+    font-size: 32px;
+    font-weight: 900;
+    color: #1a163a;
+    font-family: 'Akony', sans-serif;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: left;
+}
+
+.bento-card__tech-body {
+    display: flex;
+    justify-content: space-between;
+ align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.bento-card__tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.bento-card__tech-list li {
+    font-size: 14px;
+    color: #555565;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 0.5;
+    white-space: nowrap;
+}
+
+.bento-card__tech-media {
+    flex-grow: 1;
+    height: 110px; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;           
+    flex-shrink: 0;
+}
+
+.bento-card__tech-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    
+}
+
+.bento-card--orbit-light {
+    grid-area: block6;
+    background-color: #ffffff;
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bento-card--orbit-light .bento-card__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bento-card--orbit-light .bento-card__bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+    display: block;
+}
+
+.bento-card__cut-bottom {
+    position: relative;
+    z-index: 2;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    padding: 30px 35px;
+    box-sizing: border-box;
+}
+.bento-card__label-light p {
+    margin: 0 0 4px 0;
+    font-size: 13px;
+    color: #888898;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bento-card__label-light h4 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #635aa4;
+    font-family: 'Akony', sans-serif;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.events-page-title,
+.bento-card__title,
+.bento-card__title-pixel,
+.bento-card__tech-media,.about-hero__title, .factory-card__title,.feature-card__title,.feature-card__stat-num,.manifesto-block__text,
+.values-grid__main-title,.value-item__title,
+.factory-main-title,.factory-card-media__label span,.honor-board__title, factory-card-media__label span,
+.banner-dave__name, .dave-hero__title,.dave-history__title,.dave-evolution__title,.dave-timeline__title {
+    font-family: 'Akony', sans-serif;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================== */
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "block1"
+            "block2"
+            "block3"
+            "block4"
+            "block5"
+            "block6";
+    }
+
+    .bento-card__btn-rect {
+        padding: 10px 25px;
+        font-size: 13px;
+    }
+    .bento-card--orbit-light {
+        flex-direction: column;
+        padding: 25px 20px;
+        gap: 25px;
+    }
+    
+    .bento-card__light-right {
+        align-items: center;
+    }
+    
+    .bento-card__light-media {
+        justify-content: center;
+    }
+}
+
+.catalog-page {
+    padding: 40px 0 80px 0;
+}
+
+.catalog-main-title {
+    font-family: 'Akony', sans-serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: #1a163a;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+.catalog-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3b375a;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.catalog-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.filter-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-menu__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.filter-menu__link {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3b375a;
+    letter-spacing: 0.5px;
+}
+
+.filter-menu__count {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3b375a;
+}
+
+.filter-menu__item--active {
+    background-color: #dc6b43;
+}
+
+.filter-menu__item--active .filter-menu__link,
+.filter-menu__item--active .filter-menu__count {
+    color: #ffffff;
+}
+
+.filter-menu__item:not(.filter-menu__item--active):hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.catalog-hero-banner {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 340px;
+    margin-bottom: 40px;
+    overflow: hidden
+}
+
+.catalog-hero-banner__media {
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.catalog-hero-banner__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    display: block;
+}
+
+.catalog-hero-banner__info {
+    position: absolute;
+    bottom: 30px;
+    right: 60%;
+    text-align: left;
+    z-index: 2;
+}
+
+.catalog-hero-banner__title {
+    font-family: 'Akony', sans-serif;
+    font-size: 24px;
+    color: #3b375a;
+    margin: 0 0 4px 0;
+}
+
+.catalog-hero-banner__sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #888898;
+    margin: 0;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+}
+
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card__wrapper {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 0;
+    width: 100%;
+    aspect-ratio: 16 / 10; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.01);
+}
+
+.product-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-card__img {
+    transform: scale(1.05);
+}
+
+.product-card .bento-btn-round--plus {
+    bottom: -30px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+
+.product-card .bento-btn-round--plus:hover {
+    transform: translateX(-50%) scale(1.08);
+}
+
+/* ==========================================
+   АДАПТИВ ПОД СМАРТФОНЫ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .catalog-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .filter-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .filter-menu::-webkit-scrollbar { display: none; }
+    .filter-menu__item {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .catalog-hero-banner {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .catalog-hero-banner__info {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 50px 0;
+    }
+}
+
+.product-page {
+    padding: 40px 0 80px 0;
+}
+
+.product-single.ui-card {
+    background-color: #ffffff;
+    border-radius: 28px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.product-single__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.product-single__header {
+    margin-bottom: 25px;
+}
+
+.product-single__badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #888898;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.product-single__title {
+    font-family: 'Akony', sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: #1a163a;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.product-single__descr {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555565;
+    margin: 0 0 35px 0;
+    max-width: 420px;
+}
+
+.product-single__price-row {
+    margin-bottom: 40px;
+}
+
+.product-single__price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a163a;
+}
+
+.product-single__buy-btn {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+}
+
+.product-single__gallery {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-single__main-img-box {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-color: #f7f7f8;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    overflow: hidden;
+}
+
+.product-single__main-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.product-single__thumbs {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.product-single__thumb-item {
+    width: 90px;
+    height: 60px;
+    background-color: #f7f7f8;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-single__thumb-item:hover {
+    transform: translateY(-2px);
+}
+
+.product-single__thumb-item.active {
+    border-color: #dc6b43;
+}
+
+.product-single__thumb-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.product-spec-item {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+}
+
+.product-spec-item__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a163a;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+.product-spec-item__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666675;
+    margin: 0;
+}
+
+
+/* ==========================================
+   АДАПТИВ ПОД МОБИЛЬНЫЕ (ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    .product-single.ui-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 35px;
+    }
+
+    .product-single__title {
+        font-size: 28px;
+    }
+
+    .product-single__gallery {
+        order: -1;
+    }
+
+    .product-specs {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 10, 17, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.popup-overlay--active {
+    opacity: 1;
+    visibility: visible;
+}
+.popup-window {
+    background-color: #4a4a54;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 640px;
+    padding: 50px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.popup-overlay--active .popup-window {
+    transform: scale(1);
+}
+
+.popup-window__close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    padding: 5px;
+}
+
+.popup-window__close-btn:hover { opacity: 1; }
+
+.popup-window__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.4;
+    margin: 0 0 35px 0;
+    max-width: 85%;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.popup-form__field {
+    position: relative;
+    width: 100%;
+}
+
+.popup-form__field input {
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    padding: 18px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #16151a;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.popup-form__field label {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #888898;
+    pointer-events: none;
+    transition: transform 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.popup-form__field input:focus ~ label,
+.popup-form__field input:not(:placeholder-shown) ~ label {
+    transform: translateY(-160%);
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.popup-form__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    gap: 20px;
+}
+
+.popup-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.popup-checkbox input { display: none; }
+
+.popup-checkbox__box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+
+.popup-checkbox input:checked + .popup-checkbox__box {
+    background-color: #dc6b43;
+    border-color: #dc6b43;
+}
+
+.popup-checkbox input:checked + .popup-checkbox__box::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 9px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.popup-checkbox__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.popup-submit-btn {
+    background-color: #dc6b43;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    width: 160px;
+    height: 48px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.popup-submit-btn.disabled {
+    background-color: #7a7a85 !important;
+    color: #b0b0b8 !important;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.popup-step {
+    transition: opacity 0.3s ease;
+}
+
+.popup-step--hidden {
+    display: none;
+}
+
+.popup-success {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.popup-success__icon {
+    width: 70px;
+    height: 70px;
+    background-color: #dc6b43;
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+}
+
+.popup-success__title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.popup-success__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #cccccc;
+    line-height: 1.6;
+    max-width: 340px;
+    margin: 0 auto;
+}
+/* ==========================================
+   АДАПТИВНАЯ ШАПКА И БУРГЕР-МЕНЮ (CSS)
+   ========================================== */
+
+/* Кнопка бургера скрыта по умолчанию на ПК */
+.header__burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2000; /* Кнопка всегда поверх выехавшего меню */
+    padding: 0;
+}
+
+.header__burger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #3b375a; /* Цвет палочек */
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ СМАРТФОНОВ (ЭКРАНЫ ДО 768px)
+   ========================================== */
+@media (max-width: 768px) {
+    /* Показываем кнопку бургера */
+    .header__burger-btn {
+        display: flex;
+    }
+
+    /* Превращаем меню в полноэкранную выезжающую панель */
+    .header__menu-wrapper {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Изначально меню спрятано далеко справа за экраном */
+        width: 70%;  /* Занимает 70% ширины экрана смартфона */
+        height: 100vh;
+        background-color: #ffffff; /* Белая благородная подложка */
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+        padding: 100px 40px; /* Отступы сверху, чтобы не перекрывать лог и крестик */
+        z-index: 1500;
+        transition: right 0.4s cubic-bezier(0.1, 1, 0.1, 1); /* Плавное скольжение */
+    }
+
+    /* Класс, который JS добавит при активации меню */
+    .header__menu-wrapper.menu--open {
+        right: 0; /* Меню выезжает на экран */
+    }
+
+    /* Выстраиваем пункты меню вертикально на телефонах */
+    .menu__list {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 30px !important;
+    }
+
+    .menu__link {
+        font-size: 22px !important; /* Делаем ссылки крупными для удобного тапа пальцем */
+        font-family: 'Akony', sans-serif; /* Твой крутой шрифт для меню */
+        text-transform: uppercase;
+    }
+
+    /* АНИМАЦИЯ ПРЕВРАЩЕНИЯ БУРГЕРА В КРЕСТИК КЛИКЕ */
+    .header__burger-btn.burger--active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #dc6b43; /* При открытии крестик становится оранжевым */
+    }
+    
+    .header__burger-btn.burger--active span:nth-child(2) {
+        opacity: 0; /* Средняя палочка исчезает */
+    }
+    
+    .header__burger-btn.burger--active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background-color: #dc6b43;
+    }
+
+    /* Блокируем скролл страницы, когда меню открыто */
+    body.no-scroll {
+        overflow: hidden;
+    }
+}
+
+/* ---------- Responsive fixes: prevent horizontal scroll ---------- */
+/* Ensure page never scrolls horizontally */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make all media responsive by default */
+img, svg, picture, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Allow flex/grid children to shrink on small viewports */
+.container,
+.header__container,
+.bento-grid,
+.products-grid,
+.events__list,
+.dave-history__grid,
+.dave-evolution__grid,
+.factory-grid,
+.honor-board__grid {
+  min-width: 0; /* important for flex/grid children to not overflow */
+}
+
+/* Fix elements that intentionally used >100% width */
+.banner-dave__img,
+.dave-hero__img,
+.bento-card__purple-bat {
+  width: 100% !important;
+  max-width: 100% !important;
+  object-fit: contain;
+}
+
+/* Make large background images cover safely without overflow */
+.bento-card--catalog-main .bento-card__bg,
+.bento-card__bg-img img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+/* Prevent product/gallery large boxes from pushing width */
+.product-single__main-img-box,
+.product-card__wrapper,
+.factory-card-media,
+.factory-image,
+.exhibition-banner {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Override absolute label offsets on small screens */
+@media (max-width: 768px) {
+  /* Slightly smaller page padding on phones */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Make the header menu full-width on mobile to avoid overflows from fixed width + padding */
+  .header__menu-wrapper {
+    width: 100% !important;
+    right: -100%;
+    padding: 100px 20px;
+    box-sizing: border-box;
+  }
+  .header__menu-wrapper.menu--open {
+    right: 0;
+  }
+
+  /* Make hero / banner images safe */
+  .banner-dave__img,
+  .dave-hero__img,
+  .bento-card__purple-bat {
+    width: 100% !important;
+    max-width: 100% !important;
+    object-fit: contain;
+  }
+
+  /* Grid → single column on small screens to avoid overflow */
+  .bento-grid,
+  .about-features-grid,
+  .factory-grid,
+  .dave-history__grid,
+  .dave-evolution__grid,
+  .honor-board__grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 20px !important;
+  }
+
+  /* Labels that were placed with large negative offsets */
+  .factory-card-media__label {
+    left: 15px !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: -15px !important;
+    transform: none !important;
+    padding: 12px 20px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Make some paddings smaller so content doesn't overflow */
+  .dave-hero,
+  .about-hero__card,
+  .product-single.ui-card,
+  .ui-card {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Special: ensure events listings don't force horizontal scroll */
+  .events__list,
+  .events-posters-three,
+  .events-collection-grid {
+    overflow: visible;
+  }
+}
+/* =========================
+   Responsive tweaks for index.html (главная)
+   Вставьте в конец style.css
+   ========================= */
+
+/* Общие защитные правила для главной страницы */
+.hero-bento,
+.bento-grid,
+.events__list,
+.collection__grid,
+.products-grid,
+.container {
+  min-width: 0; /* позволяет дочерним элементам корректно сжиматься */
+}
+
+/* Глобальные правила для медиа на главной — делаем изображения безопасными */
+.hero-bento img,
+.bento-card img,
+.banner-dave__img,
+.bento-card__purple-bat,
+.collection__img,
+.events__img,
+.product-card__img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ---------- брейкпоинт: большие планшеты / малые десктопы ---------- */
+@media (max-width: 1024px) {
+
+  /* Уменьшаем жесткие отступы в герое, чтобы не «выпирать» */
+  .hero-bento {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Плавный переход bento: 2 колонки когда места меньше */
+  .hero-bento .bento-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "block1 block3"
+      "block2 block3"
+      "block4 block4";
+  }
+
+  .bento-card--slogan {
+    grid-area: block3;
+    padding: 28px;
+  }
+
+  /* Чуть меньший размер аватара, чтобы не давать overflow */
+  .bento-card--avatar-main .bento-card__avatar-img {
+    max-width: 160px;
+  }
+}
+
+/* ---------- брейкпоинт: планшеты и мобильные (основной) ---------- */
+@media (max-width: 768px) {
+
+  /* Убираем большие паддинги и переводим в колонку */
+  .hero-bento {
+    padding: 20px 16px;
+  }
+
+  .hero-bento .bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-template-areas:
+      "block1"
+      "block2"
+      "block3"
+      "block4";
+    gap: 18px;
+  }
+
+  /* Карточки bento становятся вертикальными и компактными */
+  .bento-card {
+    border-radius: 18px;
+    padding: 18px;
+  }
+
+  .bento-card--slogan {
+    padding: 20px;
+    height: auto;
+  }
+
+  /* Кнопка внизу slogan: ближе и не выходит за пределы */
+  .bento-card--slogan .bento-btn-round--bottom {
+    bottom: -18px;
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Аватар: центрируем и уменьшаем */
+  .bento-card--avatar-main {
+    align-items: center;
+    padding: 12px;
+  }
+  .bento-card--avatar-main .bento-card__avatar-img {
+    max-width: 140px;
+    margin-top: -8px;
+  }
+
+  /* Секция событий: делаем горизонтальный скролл с snap, если карточки большие */
+  .events__list {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .events__item {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+  }
+  .events__btn {
+    width: 80%;
+    padding: 10px 20px;
+  }
+
+  /* Коллекция — одна колонка на телефоне */
+  .collection__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* Уменьшаем высоту и паддинги больших баннеров */
+  .banner-dave {
+    padding: 24px;
+    min-height: auto;
+  }
+  .banner-dave__img {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Контейнеры: меньше внутренние отступы */
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* footer: упрощённый отступ */
+  .footer {
+    padding: 30px 0 24px 0;
+  }
+}
+
+/* ---------- брейкпоинт: очень узкие телефоны / старые смартфоны ---------- */
+@media (max-width: 480px) {
+
+  /* Текст заголовков — немного мельче, чтобы не переносил контейнеры */
+  .bento-card__slogan-title,
+  .banner-dave__name {
+    font-size: clamp(20px, 5vw, 36px);
+    line-height: 1.05;
+  }
+
+  .events__item {
+    flex: 0 0 88%;
+  }
+
+  /* Кнопки и круги явно меньше */
+  .bento-btn-round,
+  .bento-btn-round--bottom,
+  .bento-btn-round--left {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* Сокращаем отступы в карточках продуктов */
+  .collection__img-wrapper,
+  .product-card__wrapper {
+    padding: 12px;
+  }
+
+  /* Гарантируем, что абсолютные элементы меток не выходят за экран */
+  .bento-card__bg-img,
+  .bento-card__bg {
+    background: 100% no-repeat center center;
+    right: 0;
+    left: 0;
+  }
+}
+
+/* ---------- Дополнительные «анти-overflow» правила (главная) ---------- */
+/* Если какие-то внутренние элементы по-прежнему растут, это их ограничит */
+.hero-bento .bento-card,
+.banner-dave,
+.collection__item,
+.events__item {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Обеспечиваем, что ссылки-обёртки не создают лишней ширины */
+.bento-card,
+.product-card,
+.events__item {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Исправления для двух блоков на главной (hero + маленький вертикальный блок) */
+@media (max-width: 768px) {
+  /* Пусть сетка bento станет одной колонкой на телефоне */
+  .hero-bento .bento-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto;
+    gap: 18px;
+  }
+
+  /* Карточки становятся адаптивными */
+  .bento-card {
+    padding: 18px !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0; /* важно, чтобы flex/grid дети сжимались */
+  }
+
+  /* Большой слева (слоган) — текст не должен растягивать контейнер */
+  .bento-card--slogan {
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 26px;
+  }
+
+  .bento-card__slogan-title {
+    font-size: clamp(18px, 5.5vw, 28px) !important;
+    line-height: 1.05 !important;
+    white-space: normal !important;    /* позволит переносить строки */
+    word-break: break-word !important;
+    margin-bottom: 12px;
+  }
+
+  .bento-card__slogan-link {
+    font-size: 14px !important;
+  }
+
+  /* Маленький вертикальный блок с аватаром — центрируем и уменьшаем */
+  .bento-card--avatar-main {
+    padding: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .bento-card--avatar-main .bento-card__avatar-img {
+    max-width: 140px !important;
+    width: 60% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Плавающая круглая кнопка: не делать её абсолютной с выходом за край,
+     а размещать под карточкой по центру на мобилке */
+  .bento-btn-round--bottom {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 12px auto 0 auto !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Если у вас есть «плюс» снизу маленькой карточки */
+  .bento-card--avatar-main .bento-btn-round {
+    position: relative !important;
+    margin-top: 10px !important;
+  }
+
+  /* Защитные правила от overflow для медиа внутри карточек */
+  .bento-card img,
+  .banner-dave__img,
+  .bento-card__purple-bat {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  /* Уменьшаем внешние паддинги контейнера на телефонах */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Доп. анти-overflow: глобальные «защиты», если где-то что-то всё ещё выпирает */
+html, body { overflow-x: hidden; }
+img, svg, picture { max-width: 100%; height: auto; display: block; }
+
+/* Если хотите более жёстко: запретить элементам создавать минимальную ширину */
+.hero-bento, .bento-card, .bento-card * { min-width: 0; }
+
+/* ===========================
+   Адаптивы для каталога и товара
+   Вставьте в конец style.css
+   =========================== */
+
+/* --- Общие анти-overflow правила для этих страниц --- */
+.catalog-layout,
+.catalog-content,
+.products-grid,
+.filter-menu,
+.filter-menu__item,
+.product-single,
+.product-single__gallery,
+.product-single__main-img-box,
+.product-single__thumbs {
+  min-width: 0;
+  box-sizing: border-box;
+}
+img, svg, picture { max-width: 100%; height: auto; display: block; }
+
+/* =========================
+   КАТАЛОГ: десктоп → планшет → мобильный
+   ========================= */
+
+/* планшеты / небольшие десктопы */
+@media (max-width: 1024px) {
+  .catalog-layout { grid-template-columns: 1fr; gap: 30px; }
+  .filter-menu { flex-direction: row; gap: 12px; overflow-x: auto; padding-bottom: 10px; }
+  .filter-menu__item { flex: 0 0 auto; white-space: nowrap; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; }
+}
+
+/* основной мобильный breakpoint */
+@media (max-width: 768px) {
+  /* Сайдбар -> строчка фильтров (горизонтально скроллящаяся) */
+  .catalog-layout { grid-template-columns: 1fr; gap: 20px; }
+  .catalog-sidebar { order: -1; } /* фильтры над товарами */
+  .filter-menu { display: flex; gap: 12px; overflow-x: auto; padding: 12px 0; -webkit-overflow-scrolling: touch; }
+  .filter-menu::-webkit-scrollbar { display: none; }
+  .filter-menu__item { flex: 0 0 auto; padding: 10px 14px; border-radius: 12px; background: transparent; }
+  .filter-menu__item--active { background: #dc6b43; }
+  .filter-menu__item--active .filter-menu__link,
+  .filter-menu__item--active .filter-menu__count { color: #fff; }
+
+  /* Товары: одна колонка, карточки широкие и с отступами */
+  .products-grid { grid-template-columns: 1fr; gap: 36px; }
+  .product-card { width: 100%; max-width: 100%; }
+  .product-card__wrapper { aspect-ratio: 4 / 3; padding: 18px; border-radius: 16px; }
+
+  /* Кнопка + под карточкой по центру (если используется) */
+  .product-card .bento-btn-round--plus { position: relative; bottom: auto; left: auto; transform: none; margin: -24px auto 0 auto; }
+
+  /* Hero/banner в каталоге — не давать изображению вылезать */
+  .catalog-hero-banner__media img { width: 100%; max-width: 100%; height: auto; object-fit: cover; }
+
+  /* Подписи/тексты — немного мельче */
+  .catalog-main-title { font-size: clamp(26px, 6vw, 42px); }
+  .catalog-subtitle { font-size: 12px; }
+}
+
+/* очень узкие телефоны */
+@media (max-width: 480px) {
+  .filter-menu__item { padding: 8px 12px; font-size: 13px; }
+  .product-card__wrapper { aspect-ratio: 16 / 12; padding: 12px; }
+  .product-card .bento-btn-round--plus { width: 48px; height: 48px; }
+}
+
+/* =========================
+   СТРАНИЦА ТОВАРА (product.html)
+   ========================= */
+
+/* Обертка карточки: на мобильных — колонка с галереей сверху */
+@media (max-width: 768px) {
+  .product-single.ui-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 24px;
+  }
+  .product-single__gallery { order: -1; width: 100%; }
+  .product-single__main-img-box { width: 100%; aspect-ratio: 4 / 3; padding: 18px; border-radius: 14px; }
+  .product-single__thumbs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 8px 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-single__thumb-item { flex: 0 0 auto; width: 86px; height: 56px; }
+}
+
+/* Десктоп / планшет: ограничиваем размер главного изображения */
+.product-single__main-img-box img { max-width: 100%; max-height: 500px; object-fit: contain; }
+
+/* Галерея миниатюр: чёткие границы и не даём им давить родителя */
+.product-single__thumb-item img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* Попап заказа: растягиваем по центру на мобильных */
+@media (max-width: 480px) {
+  .popup-window { padding: 24px; border-radius: 14px; max-width: 92%; }
+  .popup-form__field input { padding: 14px 16px; font-size: 15px; }
+  .popup-submit-btn { width: 140px; height: 44px; }
+}
+
+/* Защитный анти-overflow для попапа и галереи */
+.popup-overlay { padding: 16px; box-sizing: border-box; }
+/* =========================
+   Responsive + horizontal catalog (mobile) + product tweaks
+   Вставьте в конец style.css
+   ========================= */
+
+/* ---------- Общие анти-overflow и адаптивные картинки ---------- */
+html, body { overflow-x: hidden; }
+img, svg, picture, video { max-width: 100%; height: auto; display: block; }
+* { box-sizing: border-box; }
+
+/* Защита: разрешаем flex/grid детям сжиматься */
+.container,
+.catalog-layout,
+.catalog-content,
+.products-grid,
+.filter-menu,
+.product-single,
+.product-single__gallery,
+.product-single__main-img-box,
+.product-single__thumbs,
+.bento-grid,
+.hero-bento {
+  min-width: 0;
+}
+
+/* =========================
+   КАТАЛОГ: мобильная лента + видимый фильтр
+   ========================= */
+
+/* Основной мобильный breakpoint */
+@media (max-width: 768px) {
+
+  /* Фильтр: горизонтальный, всегда виден (на мобильных он будет над лентой) */
+  .catalog-sidebar { display: block; order: -1; margin-bottom: 8px; }
+  .filter-menu {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 6px 18px 6px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    align-items: flex-start;
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+.filter-menu::-webkit-scrollbar { display: none; }
+
+.filter-menu__item {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 12px;
+    background: transparent;
+    scroll-snap-align: start;
+    cursor: pointer;
+  }
+
+  .filter-menu__item--active {
+    background: #dc6b43;
+  }
+  .filter-menu__item--active .filter-menu__link,
+  .filter-menu__item--active .filter-menu__count {
+    color: #fff;
+  }
+
+  /* Скрываем крупную фотографию/баннер в hero каталога (только картинку) */
+  .catalog-hero-banner { display: none !important; }
+
+  /* Превращаем грид товаров в горизонтальную ленту */
+  .products-grid {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding: 10px 6px 18px 6px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    align-items: flex-start;
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  .products-grid::-webkit-scrollbar { display: none; }
+
+  /* Размер карточки в ленте (уменьшенный) */
+  .product-card {
+    flex: 0 0 220px;
+    max-width: 220px;
+    scroll-snap-align: center;
+    box-sizing: border-box;
+  }
+  .product-card__wrapper {
+    aspect-ratio: 4 / 3;
+    padding: 12px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* "Плюс" под карточкой, не абсолютный */
+  .product-card .bento-btn-round--plus {
+    position: relative;
+    margin: -20px auto 0 auto;
+    transform: none;
+  }
+
+  /* Тексты/заголовки компактнее */
+  .catalog-main-title { font-size: clamp(26px, 6vw, 36px); margin-bottom: 8px; }
+  .catalog-subtitle { font-size: 12px; margin-bottom: 10px; color: #666; }
+
+  /* Контейнер padding */
+  .container { padding-left: 16px; padding-right: 16px; }
+}
+
+/* Очень узкие телефоны: чуть уменьшить карточки */
+@media (max-width: 420px) {
+  .product-card { flex: 0 0 190px; max-width: 190px; }
+  .product-card__wrapper { padding: 10px; }
+  .product-card .bento-btn-round--plus { width: 48px; height: 48px; }
+}
+
+/* =========================
+   КАТАЛОГ: планшет / небольшие десктопы
+   ========================= */
+@media (max-width: 1024px) {
+  .catalog-layout { grid-template-columns: 1fr; gap: 30px; }
+  .filter-menu { flex-direction: row; gap: 12px; overflow-x: auto; padding-bottom: 10px; }
+  .filter-menu__item { flex: 0 0 auto; white-space: nowrap; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 20px; display: grid; }
+}
+
+/* =========================
+   СТРАНИЦА ТОВАРА (product.html)
+   ========================= */
+@media (max-width: 768px) {
+  .product-single.ui-card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 24px;
+  }
+  .product-single__gallery { order: -1; width: 100%; }
+  .product-single__main-img-box { width: 100%; aspect-ratio: 4 / 3; padding: 18px; border-radius: 14px; }
+  .product-single__thumbs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 8px 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .product-single__thumb-item { flex: 0 0 auto; width: 86px; height: 56px; }
+}
+
+/* Ограничение главного изображения */
+.product-single__main-img-box img { max-width: 100%; max-height: 500px; object-fit: contain; }
+
+/* Попап: мобильные улучшения */
+@media (max-width: 480px) {
+  .popup-window { padding: 24px; border-radius: 14px; max-width: 92%; }
+  .popup-form__field input { padding: 14px 16px; font-size: 15px; }
+  .popup-submit-btn { width: 140px; height: 44px; }
+}
+
+/* Анти-overflow защиты (обновления) */
+.catalog-layout, .catalog-content, .product-card, .product-card * { min-width: 0; }

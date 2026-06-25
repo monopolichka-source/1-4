@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+    <div class="container header__container">
+        
+        <!-- Логотип -->
+        <div class="header__logo-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Логотип" class="logo__img">
+            </a>
+        </div>
+
+        <!-- Кнопка гамбургера (видна только на мобилках) -->
+        <button class="header__burger-btn" id="burger-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (на мобилках будет выезжать сбоку) -->
+        <nav class="menu header__menu-wrapper" id="mobile-menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="about.html" class="menu__link">о нас</a></li>
+                <li class="menu__item"><a href="events.html" class="menu__link">события</a></li>
+                <li class="menu__item"><a href="catalog-view.html" class="menu__link">каталог</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+
+<main class="main catalog-page">
+    <div class="container">
+        <h1 class="catalog-main-title">КАТАЛОГ</h1>
+        <p class="catalog-subtitle">Форма дня,<br>для ночных существ</p>
+        <div class="catalog-layout">
+           <aside class="catalog-sidebar">
+    <ul class="filter-menu">
+        <!-- КОЛЛЕКЦИИ 2026 -->
+        <li class="filter-menu__item filter-menu__item--active" data-filter="orbit02">
+            <a href="#" class="filter-menu__link">КОЛЛЕКЦИИ 2026</a>
+            <span class="filter-menu__count">4</span>
+        </li>
+        <!-- СОЛНЦЕЗАЩИТНЫЕ -->
+        <li class="filter-menu__item" data-filter="sun">
+            <a href="#" class="filter-menu__link">СОЛНЦЕЗАЩИТНЫЕ</a>
+            <span class="filter-menu__count">4</span>
+        </li>
+        <!-- АКСЕССУАРЫ -->
+        <li class="filter-menu__item" data-filter="accessories">
+            <a href="#" class="filter-menu__link">АКСЕССУАРЫ</a>
+            <span class="filter-menu__count">4</span>
+        </li>
+        <!-- КОЛЛЕКЦИИ 2025 -->
+        <li class="filter-menu__item" data-filter="col2025">
+            <a href="#" class="filter-menu__link">КОЛЛЕКЦИИ 2025</a>
+            <span class="filter-menu__count">3</span>
+        </li>
+        <!-- МЕРЧ -->
+        <li class="filter-menu__item" data-filter="merch">
+            <a href="#" class="filter-menu__link">МЕРЧ</a>
+            <span class="filter-menu__count">3</span>
+        </li>
+        <!-- ВСЕ ТОВАРЫ -->
+        <li class="filter-menu__item" data-filter="all">
+            <a href="#" class="filter-menu__link">ВСЕ ТОВАРЫ</a>
+            <span class="filter-menu__count">18</span>
+        </li>
+    </ul>
+</aside>
+            <div class="catalog-content">
+                <div class="catalog-hero-banner ui-card">
+                        <div class="catalog-hero-banner__media">
+                            <img src="assets/about-bg.png" alt="орбита_01">
+                        </div>
+                        <div class="catalog-hero-banner__info">
+                            <h2 class="catalog-hero-banner__title">орбита_02</h2>
+                            <p class="catalog-hero-banner__sub">коллекция 2026</p>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="products-container">
+                </div>
+            </div>
+        </div> <!-- /catalog-layout -->
+    </div>
+</main>
+        <!-- ПОДВАЛ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__col">
+                <h4 class="footer__title">Дэйбэт</h4>
+                <ul class="footer__list">
+                    <li><a href="about.html" class="footer__link">О нас</a></li>
+                    <li><a href="events.html" class="footer__link">События</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+79001001010" class="footer__link">+7 900 100-10-10</a></li>
+                    <li><a href="mailto:optika@Batday.ru" class="footer__link">optika@Batday.ru</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Офис</h4>
+                <p class="footer__text">г. Летучий Новгород</p>
+                <p class="footer__text">ул. Клыковная, д. 666</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__credits">
+                <p>Выполнила <span class="footer__highlight">Пензина Анастасия</span></p>
+                <p>Куратор <span class="footer__highlight">Евдокимов Стас</span></p>
+                <p>Технолог <span class="footer__highlight">Сыров Юрий</span></p>
+            </div>
+            <div class="footer__group">
+                <p>Группа: <span class="footer__highlight">25ндиз-2</span></p>
+            </div>
+            <div class="footer__logo">
+                <img src="assets/shd.svg" alt="Школа дизайна" class="footer__logo-img">
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+        // 1. БАЗА ДАННЫХ ВСЕХ ТОВАРОВ ПОД ТВОИ НАЗВАНИЯ ФАЙЛОВ
+        const productsData = [
+            // 1. КОЛЛЕКЦИИ 2026 / ОРБИТА_02 (orbit02)
+            { id: 1, category: 'orbit02', img: 'products/2026gls1.png' },
+            { id: 2, category: 'orbit02', img: 'products/2026gls2.png' },
+            { id: 3, category: 'orbit02', img: 'products/2026gls3.png' },
+            { id: 4, category: 'orbit02', img: 'products/2026gls4.png' },
+
+            // 2. НАШ МЕРЧ (merch)
+            { id: 5, category: 'merch', img: 'products/merch1.png' },
+            { id: 6, category: 'merch', img: 'products/merch2.png' },
+            { id: 7, category: 'merch', img: 'products/merch3.png' },
+
+            // 3. ЗАЩИТА ОТ СОЛНЦА (sun)
+            { id: 8, category: 'sun', img: 'products/sun1.png' },
+            { id: 9, category: 'sun', img: 'products/sun2.png' },
+            { id: 10, category: 'sun', img: 'products/sun3.png' },
+            { id: 11, category: 'sun', img: 'products/sun4.png' },
+
+            // 4. КОЛЛЕКЦИИ 2025 (col2025)
+            { id: 12, category: 'col2025', img: 'products/2025gls1.png' },
+            { id: 13, category: 'col2025', img: 'products/2025gls2.png' },
+            { id: 14, category: 'col2025', img: 'products/2025gls3.png' },
+
+            // 5. АКСЕССУАРЫ (accessories)
+            { id: 15, category: 'accessories', img: 'products/acc1.png' },
+            { id: 16, category: 'accessories', img: 'products/acc2.png' },
+            { id: 17, category: 'accessories', img: 'products/acc3.png' },
+            { id: 18, category: 'accessories', img: 'products/acc4.png' }
+        ];
+
+        // 2. ФУНКЦИЯ ОТОБРАЖЕНИЯ ТОВАРОВ
+        function renderProducts(filterType) {
+            const container = document.getElementById('products-container');
+            container.innerHTML = ''; // Стираем старые карточки
+
+            // Если выбрали 'all' — берем весь массив, если категорию — фильтруем по ней
+            const filteredProducts = filterType === 'all' 
+                ? productsData 
+                : productsData.filter(item => item.category === filterType);
+
+            // Генерируем HTML-код для каждой карточки товара
+            filteredProducts.forEach(product => {
+                const cardHtml = `
+            <!-- Ссылка теперь ведет на product.html с уникальным id товара -->
+            <a href="product.html?id=${product.id}" class="product-card">
+                <div class="product-card__wrapper ui-card">
+                    <img src="${product.img}" alt="Товар" class="product-card__img">
+                </div>
+                <div class="bento-btn-round bento-btn-round--plus">
+                    <img src="assets/plus.svg" alt="+">
+                </div>
+            </a>
+        `;
+                container.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+
+        // 3. ОТСЛЕЖИВАНИЕ КЛИКОВ ПО МЕНЮ СЛЭВА
+        const menuItems = document.querySelectorAll('.filter-menu__item');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault(); // Запрещаем странице перезагружаться при клике на ссылки
+                
+                // Убираем оранжевый цвет у старой вкладки и даем новой
+                menuItems.forEach(el => el.classList.remove('filter-menu__item--active'));
+                this.classList.add('filter-menu__item--active');
+                
+                // Читаем, какую категорию выбрал пользователь, и обновляем товары
+                const filter = this.getAttribute('data-filter');
+                renderProducts(filter);
+            });
+        });
+
+        // 4. СВЯЗЬ С СЕТКОЙ BENTO НА ГЛАВНОЙ СТРАНИЦЕ
+        const urlParams = new URLSearchParams(window.location.search);
+        const activeFilter = urlParams.get('filter') || 'all'; // Если открыли просто так, покажет 'all'
+
+        const targetMenu = document.querySelector(`.filter-menu__item[data-filter="${activeFilter}"]`);
+        if (targetMenu) {
+            menuItems.forEach(el => el.classList.remove('filter-menu__item--active'));
+            targetMenu.classList.add('filter-menu__item--active');
+        }
+
+        // Запускаем автоматическую сборку товаров при открытии страницы
+        renderProducts(activeFilter);
+</script>
+
+<script>
+// ЛОГИКА МОБИЛЬНОГО БУРГЕР-МЕНЮ
+const burgerBtn = document.getElementById('burger-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const bodyElement = document.body;
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+        // Переключаем класс анимации палочек в крестик
+        this.classList.toggle('burger--active');
+        // Переключаем выезд панели меню
+        mobileMenu.classList.toggle('menu--open');
+        // Блокируем прокрутку сайта на фоне, пока открыто меню
+        bodyElement.classList.toggle('no-scroll');
+    });
+
+    // Закрываем меню, если пользователь кликнул на ссылку
+    const menuLinks = mobileMenu.querySelectorAll('.menu__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('burger--active');
+            mobileMenu.classList.remove('menu--open');
+            bodyElement.classList.remove('no-scroll');
+        });
+    });
+}
+</script>
+<script>
+/* =========================
+   Catalog mobile behavior: filter click + ensure lenta scrolls to start
+   Вставьте в конец catalog-view.html (перед </body>)
+   ========================= */
+(function() {
+  const filterItems = document.querySelectorAll('.filter-menu__item');
+  const productsGrid = document.getElementById('products-container') || document.querySelector('.products-grid');
+
+  // helper: set productsGrid to flex on mobile if not already (safety)
+  function ensureProductsGridIsLenta() {
+    if (!productsGrid) return;
+    const mq = window.matchMedia('(max-width: 768px)');
+    if (mq.matches) {
+      productsGrid.style.display = productsGrid.style.display || 'flex';
+      productsGrid.style.overflowX = productsGrid.style.overflowX || 'auto';
+      productsGrid.style.gap = productsGrid.style.gap || '14px';
+    } else {
+      productsGrid.style.display = ''; // restore CSS default on larger screens
+      productsGrid.style.overflowX = '';
+      productsGrid.style.gap = '';
+    }
+  }
+
+  // initial
+  ensureProductsGridIsLenta();
+  window.addEventListener('resize', ensureProductsGridIsLenta);
+
+  // click handling: toggle active class, call renderProducts(filter) if available
+  filterItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      // visually toggle active
+      filterItems.forEach(i => i.classList.remove('filter-menu__item--active'));
+      item.classList.add('filter-menu__item--active');
+
+      // read filter
+      const filter = item.getAttribute('data-filter') || 'all';
+
+      // If your page has renderProducts(filter) (as in your code), call it
+      if (typeof renderProducts === 'function') {
+        renderProducts(filter);
+        // after render, scroll the products grid to the start (smooth)
+        setTimeout(() => {
+          if (productsGrid) productsGrid.scrollTo({ left: 0, behavior: 'smooth' });
+        }, 80);
+      } else {
+        // fallback: bring the active filter into center view
+        item.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

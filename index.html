@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ШАПКА -->
+<header class="header">
+    <div class="container header__container">
+        
+        <!-- Логотип -->
+        <div class="header__logo-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Логотип" class="logo__img">
+            </a>
+        </div>
+
+        <!-- Кнопка гамбургера (видна только на мобилках) -->
+        <button class="header__burger-btn" id="burger-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (на мобилках будет выезжать сбоку) -->
+        <nav class="menu header__menu-wrapper" id="mobile-menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="about.html" class="menu__link">о нас</a></li>
+                <li class="menu__item"><a href="events.html" class="menu__link">события</a></li>
+                <li class="menu__item"><a href="catalog-view.html" class="menu__link">каталог</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<!-- БЛОКИ -->
+<section class="hero-bento container">
+    <div class="bento-grid">
+ <!-- БЛОК 1-->
+        <a href="catalog-view.html" class="bento-card bento-card--catalog-main">
+            <img src="assets/bg.svg" alt="Каталог" class="bento-card__bg">
+            <div class="bento-btn-round bento-btn-round--left">
+                <img src="assets/arrow.svg" alt=">">
+            </div>
+        </a>
+<!-- БЛОК 2-->
+        <a href="404.html" class="bento-card bento-card--avatar-main">
+            <img src="assets/bat.svg" alt="Бэт" class="bento-card__avatar-img">
+        </a>
+<!-- БЛОК 3: -->
+        <div class="bento-card bento-card--slogan">
+            <div class="bento-card__slogan-top">
+                <h2 class="bento-card__slogan-title">ПОЙМАЙ СВЕТ.<br>ЛЕТИ<br>С ДЭЙБЭТ.</h2>
+                <p class="bento-card__slogan-link">подробнее о нас</p>
+            </div>
+            <div class="bento-card__slogan-media">
+                <img src="assets/tech-blueprint.png" alt="Чертеж очков" class="bento-card__slogan-img">
+            </div>
+            <a href="about.html" class="bento-btn-round bento-btn-round--bottom" aria-label="Подробнее о нас">
+                <img src="assets/plus.svg" alt="+">
+            </a>
+        </div>
+<!-- БЛОК 4 -->
+        <a href="factory.html" class="bento-card bento-card--production-main">
+            <h2 class="bento-card__prod-title">УЗНАЙ, КАК МЫ ПРОИЗВОДИМ ОЧКИ ДЛЯ ВАС</h2>
+            <div class="bento-btn-rect">ПЕРЕЙТИ</div>
+        </a>
+    </div>
+</section>
+<!-- СОБЫТИЯ -->
+<section class="events container">
+    <h2 class="events__title">СОБЫТИЯ</h2>
+    <div class="events__list">
+        <!-- ПОСТЕР 1: ИСТОРИЯ ЛИНЗ -->
+        <a href="events.html#lens" class="events__item">
+            <div class="events__poster-wrapper">
+                <img src="assets/poster1.png" alt="История появления линз" class="events__img">
+            </div>
+            <div class="events__btn">ПЕРЕЙТИ</div>
+        </a>
+        <!-- ПОСТЕР 2: БЭТЫ ОЧКИ ФЕСТ -->
+        <a href="events.html#fest" class="events__item">
+            <div class="events__poster-wrapper">
+                <img src="assets/poster2.png" alt="День бэты очки фест" class="events__img">
+            </div>
+            <div class="events__btn">ПЕРЕЙТИ</div>
+        </a>
+        <!-- ПОСТЕР 3: КИНОУТРО -->
+        <a href="events.html#movie" class="events__item">
+            <div class="events__poster-wrapper">
+                <img src="assets/poster3.png" alt="Кино утро" class="events__img">
+            </div>
+            <div class="events__btn">ПЕРЕЙТИ</div>
+        </a>
+    </div>
+</section>
+<!-- НОВИНКИ -->
+<section class="collection container">
+    <h2 class="collection__title">НАША НОВАЯ КОЛЛЕКЦИЯ</h2>
+    <div class="collection__grid">
+        <!-- Карточка 1 -->
+        <div class="collection__item">
+            <div class="collection__img-wrapper">
+                <img src="assets/glass1.png" alt="Очки черные" class="collection__img">
+            </div>
+            <button class="collection__btn-plus" aria-label="Добавить в корзину">
+                <img src="assets/plus.svg" alt="+">
+            </button>
+        </div>
+        <!-- Карточка 2 -->
+        <div class="collection__item">
+            <div class="collection__img-wrapper">
+                <img src="assets/glass2.png" alt="Очки хромированные" class="collection__img">
+            </div>
+            <button class="collection__btn-plus" aria-label="Добавить в корзину">
+                <img src="assets/plus.svg" alt="+">
+            </button>
+        </div>
+        <!-- Карточка 3 -->
+        <div class="collection__item">
+            <div class="collection__img-wrapper">
+                <img src="assets/glass3.png" alt="Очки прозрачные" class="collection__img">
+            </div>
+            <button class="collection__btn-plus" aria-label="Добавить в корзину">
+                <img src="assets/plus.svg" alt="+">
+            </button>
+        </div>
+        <!-- Карточка 4 -->
+        <div class="collection__item">
+            <div class="collection__img-wrapper">
+                <img src="assets/glass4.png" alt="Очки спортивные" class="collection__img">
+            </div>
+            <button class="collection__btn-plus" aria-label="Добавить в корзину">
+                <img src="assets/plus.svg" alt="+">
+            </button>
+        </div>
+    </div>
+</section>
+<!-- ПОДВАЛ-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__col">
+                <h4 class="footer__title">Дэйбэт</h4>
+                <ul class="footer__list">
+                    <li><a href="about.html" class="footer__link">О нас</a></li>
+                    <li><a href="events.html" class="footer__link">События</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+79001001010" class="footer__link">+7 900 100-10-10</a></li>
+                    <li><a href="mailto:optika@Batday.ru" class="footer__link">optika@Batday.ru</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Офис</h4>
+                <p class="footer__text">г. Летучий Новгород</p>
+                <p class="footer__text">ул. Клыковная, д. 666</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__credits">
+                <p>Выполнила <span class="footer__highlight">Пензина Анастасия</span></p>
+                <p>Куратор <span class="footer__highlight">Евдокимов Стас</span></p>
+                <p>Технолог <span class="footer__highlight">Сыров Юрий</span></p>
+            </div>
+            
+            <div class="footer__group">
+                <p>Группа: <span class="footer__highlight">25ндиз-2</span></p>
+            </div>
+
+            <div class="footer__logo">
+                <img src="assets/shd.svg" alt="Школа дизайна" class="footer__logo-img">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ЛОГИКА МОБИЛЬНОГО БУРГЕР-МЕНЮ
+const burgerBtn = document.getElementById('burger-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const bodyElement = document.body;
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+        // Переключаем класс анимации палочек в крестик
+        this.classList.toggle('burger--active');
+        // Переключаем выезд панели меню
+        mobileMenu.classList.toggle('menu--open');
+        // Блокируем прокрутку сайта на фоне, пока открыто меню
+        bodyElement.classList.toggle('no-scroll');
+    });
+
+    // Закрываем меню, если пользователь кликнул на ссылку
+    const menuLinks = mobileMenu.querySelectorAll('.menu__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('burger--active');
+            mobileMenu.classList.remove('menu--open');
+            bodyElement.classList.remove('no-scroll');
+        });
+    });
+}
+</script>
+</body>
+</html>

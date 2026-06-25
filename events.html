@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События — Дэйбэт</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ШАПКА -->
+<header class="header">
+    <div class="container header__container">
+        
+        <!-- Логотип -->
+        <div class="header__logo-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Логотип" class="logo__img">
+            </a>
+        </div>
+
+        <!-- Кнопка гамбургера (видна только на мобилках) -->
+        <button class="header__burger-btn" id="burger-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (на мобилках будет выезжать сбоку) -->
+        <nav class="menu header__menu-wrapper" id="mobile-menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="about.html" class="menu__link">о нас</a></li>
+                <li class="menu__item"><a href="events.html" class="menu__link">события</a></li>
+                <li class="menu__item"><a href="catalog-view.html" class="menu__link">каталог</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<!-- СОБЫТИЯ -->
+    <main class="main">
+        <div class="container">
+            <h1 class="events-page-title">СОБЫТИЯ</h1>
+            <section class="events-block" id="fest">
+                <h3 class="events-block__subtitle">ПРИГЛАШАЕМ НА ФЕСТИВАЛЬ</h3>
+                <div class="events-posters-three">
+                    <div class="events-posters-three__item"><img src="assets/eventsposter1.png" alt="Фестиваль 1"></div>
+                    <div class="events-posters-three__item"><img src="assets/eventsposter2.png" alt="Фестиваль 2"></div>
+                    <div class="events-posters-three__item"><img src="assets/eventsposter3.png" alt="Фестиваль 3"></div>
+                </div>
+            </section>
+        <section class="events-block">
+            <div class="banner-dave">
+                <div class="banner-dave__media">
+                    <img src="assets/bat-pixel.png" alt="Дэйв пиксельный" class="banner-dave__img">
+                </div>
+                <div class="banner-dave__info">
+                    <h2 class="banner-dave__name">ДЭЙВ</h2>
+                    <a href="dave.html" class="btn-accent banner-dave__btn-go">ПЕРЕЙТИ</a>
+                </div>
+            </div>
+        </section>
+        <section class="events-block">
+            <h3 class="events-block__subtitle">НОВАЯ КОЛЛЕКЦИЯ</h3>
+            <div class="events-collection-grid">
+                <div class="collection-card">
+                    <div class="collection-card__poster">
+                        <img src="assets/posterglass1.png" alt="Детализация">
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-card__poster">
+                        <img src="assets/posterglass2.png" alt="Удлинение">
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-card__poster">
+                        <img src="assets/posterglass3.png" alt="Искривление">
+                    </div>
+                </div>
+            </div>
+        </section>
+            <section class="events-block" id="lens">
+                <h3 class="events-block__subtitle">ПРИГЛАШАЕМ НА ВЫСТАВКУ</h3>
+                <div class="exhibition-banner">
+                    <img src="assets/exhibition.png" alt="Выставка Арт+Очки" class="exhibition-banner__img">
+                    <a href="#" class="exhibition-banner__btn-arrow">
+                        <img src="assets/arrow.svg" alt=">">
+                    </a>
+                </div>
+            </section>
+            <section class="events-block events-block--last" id="movie">
+                <h3 class="events-block__subtitle">КИНОУТРО С ДЭЙБЭТ</h3>
+                <div class="events-posters-three">
+                    <div class="events-posters-three__item"><img src="assets/movie1.png" alt="Киноутро 1"></div>
+                    <div class="events-posters-three__item"><img src="assets/movie2.png" alt="Киноутро 2"></div>
+                    <div class="events-posters-three__item"><img src="assets/movie3.png" alt="Киноутро 3"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- ПОДВАЛ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__col">
+                <h4 class="footer__title">Дэйбэт</h4>
+                <ul class="footer__list">
+                    <li><a href="about.html" class="footer__link">О нас</a></li>
+                    <li><a href="events.html" class="footer__link">События</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+79001001010" class="footer__link">+7 900 100-10-10</a></li>
+                    <li><a href="mailto:optika@Batday.ru" class="footer__link">optika@Batday.ru</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Офис</h4>
+                <p class="footer__text">г. Летучий Новгород</p>
+                <p class="footer__text">ул. Клыковная, д. 666</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__credits">
+                <p>Выполнила <span class="footer__highlight">Пензина Анастасия</span></p>
+                <p>Куратор <span class="footer__highlight">Евдокимов Стас</span></p>
+                <p>Технолог <span class="footer__highlight">Сыров Юрий</span></p>
+            </div>
+            <div class="footer__group">
+                <p>Группа: <span class="footer__highlight">25ндиз-2</span></p>
+            </div>
+            <div class="footer__logo">
+                <img src="assets/shd.svg" alt="Школа дизайна" class="footer__logo-img">
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ЛОГИКА МОБИЛЬНОГО БУРГЕР-МЕНЮ
+const burgerBtn = document.getElementById('burger-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const bodyElement = document.body;
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+        // Переключаем класс анимации палочек в крестик
+        this.classList.toggle('burger--active');
+        // Переключаем выезд панели меню
+        mobileMenu.classList.toggle('menu--open');
+        // Блокируем прокрутку сайта на фоне, пока открыто меню
+        bodyElement.classList.toggle('no-scroll');
+    });
+
+    // Закрываем меню, если пользователь кликнул на ссылку
+    const menuLinks = mobileMenu.querySelectorAll('.menu__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('burger--active');
+            mobileMenu.classList.remove('menu--open');
+            bodyElement.classList.remove('no-scroll');
+        });
+    });
+}
+</script>
+</body>
+</html>

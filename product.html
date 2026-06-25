@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ШАПКА -->
+<header class="header">
+    <div class="container header__container">
+        
+        <!-- Логотип -->
+        <div class="header__logo-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Логотип" class="logo__img">
+            </a>
+        </div>
+
+        <!-- Кнопка гамбургера (видна только на мобилках) -->
+        <button class="header__burger-btn" id="burger-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (на мобилках будет выезжать сбоку) -->
+        <nav class="menu header__menu-wrapper" id="mobile-menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="about.html" class="menu__link">о нас</a></li>
+                <li class="menu__item"><a href="events.html" class="menu__link">события</a></li>
+                <li class="menu__item"><a href="catalog-view.html" class="menu__link">каталог</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</header>
+<!-- ТОВАР -->
+<main class="main product-page">
+    <div class="container">
+        <div class="product-single ui-card">
+            <div class="product-single__info">
+                <div class="product-single__header">
+                    <span class="product-single__badge" id="prod-badge">коллекция 2026</span>
+                    <h1 class="product-single__title" id="prod-title">ОРБИТА_01</h1>
+                </div>
+                <p class="product-single__descr" id="prod-descr">
+                    Обтекаемая форма и металлическая оправа создают эффект орбиты, движущейся вокруг вас.
+                </p>
+                <div class="product-single__price-row">
+                    <span class="product-single__price" id="prod-price">600 ₽</span>
+                </div>
+                <button class="bento-btn-rect product-single__buy-btn">КУПИТЬ</button>
+            </div>
+            <div class="product-single__gallery">
+                <div class="product-single__main-img-box">
+                    <img src="" alt="Товар крупно" id="prod-main-img">
+                </div>
+                <div class="product-single__thumbs" id="prod-thumbs">
+                </div>
+            </div>
+        </div>
+        <div class="product-specs">
+            <div class="product-spec-item">
+                <h3 class="product-spec-item__title" id="spec-title-1">Обтекаемая форма</h3>
+                <p class="product-spec-item__text" id="spec-text-1">аэродинамичный силуэт для комфорта и стиля</p>
+            </div>
+            <div class="product-spec-item">
+                <h3 class="product-spec-item__title" id="spec-title-2">Uv 400</h3>
+                <p class="product-spec-item__text" id="spec-text-2">максимальная защита от ультрафиолета</p>
+            </div>
+            <div class="product-spec-item">
+                <h3 class="product-spec-item__title" id="spec-title-3">Лёгкие материалы</h3>
+                <p class="product-spec-item__text" id="spec-text-3">прочный ацетат и титан для лёгкости и долговечности</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+        <!-- ПОДВАЛ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__col">
+                <h4 class="footer__title">Дэйбэт</h4>
+                <ul class="footer__list">
+                    <li><a href="about.html" class="footer__link">О нас</a></li>
+                    <li><a href="events.html" class="footer__link">События</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+79001001010" class="footer__link">+7 900 100-10-10</a></li>
+                    <li><a href="mailto:optika@Batday.ru" class="footer__link">optika@Batday.ru</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Офис</h4>
+                <p class="footer__text">г. Летучий Новгород</p>
+                <p class="footer__text">ул. Клыковная, д. 666</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__credits">
+                <p>Выполнила <span class="footer__highlight">Пензина Анастасия</span></p>
+                <p>Куратор <span class="footer__highlight">Евдокимов Стас</span></p>
+                <p>Технолог <span class="footer__highlight">Сыров Юрий</span></p>
+            </div>
+            <div class="footer__group">
+                <p>Группа: <span class="footer__highlight">25ндиз-2</span></p>
+            </div>
+            <div class="footer__logo">
+                <img src="assets/shd.svg" alt="Школа дизайна" class="footer__logo-img">
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="popup-overlay" id="order-popup">
+    <div class="popup-window">
+        <button class="popup-window__close-btn" id="popup-close" aria-label="Закрыть">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="popup-step" id="popup-step-1">
+            <h2 class="popup-window__title">Заполните форму для оформления заказа</h2>
+            <form class="popup-form" id="main-order-form">
+                <div class="popup-form__field">
+                    <input type="email" id="form-email" required placeholder=" ">
+                    <label for="form-email">Email</label>
+                </div>
+                <div class="popup-form__field">
+                    <input type="text" id="form-name" required placeholder=" ">
+                    <label for="form-name">Имя</label>
+                </div>
+                <div class="popup-form__field">
+                    <input type="tel" id="form-phone" required placeholder=" " autocomplete="off">
+                    <label for="form-phone">Телефон</label>
+                </div>
+                <div class="popup-form__footer">
+                    <label class="popup-checkbox">
+                        <input type="checkbox" id="form-agreement">
+                        <span class="popup-checkbox__box"></span>
+                        <span class="popup-checkbox__text">Я согласен на обработку личных данных</span>
+                    </label>
+                    <button type="submit" class="popup-submit-btn disabled" id="form-submit-btn" disabled>ОТПРАВИТЬ</button>
+                </div>
+            </form>
+        </div>
+        <div class="popup-step popup-step--hidden" id="popup-step-2">
+            <div class="popup-success">
+                <div class="popup-success__icon">✓</div>
+                <h2 class="popup-success__title">Заказ принят!</h2>
+                <p class="popup-success__text">Мы с вами свяжемся в ближайшее время для подтверждения покупки.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+// БАЗА ДАННЫХ НА ВСЕ 18 ТОВАРОВ С ТЕКСТАМИ И ФОТОГРАФИЯМИ
+const productsDatabase = [
+    /* === КАТЕГОРИЯ: ОРБИТА_02 / КОЛЛЕКЦИИ 2026 === */
+    {
+        id: 1, category: 'orbit02', title: 'ОРБИТА_01', badge: 'коллекция 2026', price: '600 ₽',
+        descr: 'Обтекаемая форма и металлическая оправа создают эффект орбиты, движущейся вокруг вас.',
+        gallery: ['products/2026gls1.png', 'products/2026gls1.png', 'products/2026gls1.png'],
+        specs: [
+            { title: 'Обтекаемая форма', text: 'аэродинамичный силуэт для комфорта и стиля' },
+            { title: 'Uv 400', text: 'максимальная защита от ультрафиолета' },
+            { title: 'Лёгкие материалы', text: 'прочный ацетат и титан для лёгкости' }
+        ]
+    },
+    {
+        id: 2, category: 'orbit02', title: 'ОРБИТА_02', badge: 'коллекция 2026', price: '750 ₽',
+        descr: 'Хромированное покрытие и линзы с глубоким затемнением. Модель для абсолютной анонимности.',
+        gallery: ['products/2026gls2.png', 'products/2026gls2.png', 'products/2026gls2.png'],
+        specs: [
+            { title: 'Зеркальный хром', text: 'устойчивое напыление против царапин' },
+            { title: 'Поляризация', text: 'полное гашение бликов в ночное время' },
+            { title: 'Flex-дужки', text: 'подстраиваются под любую форму головы' }
+        ]
+    },
+    {
+        id: 3, category: 'orbit02', title: 'ОРБИТА_03 / CLEAR', badge: 'коллекция 2026', price: '800 ₽',
+        descr: 'Прозрачный полимерный каркас с неоновым отливом. Минималистичный футуризм в чистом виде.',
+        gallery: ['products/2026gls3.png', 'products/2026gls3.png', 'products/2026gls3.png'],
+        specs: [
+            { title: 'TR-90 Полимер', text: 'сверхгибкий и неощутимый на лице материал' },
+            { title: 'Anti-fog', text: 'линзы не запотевают при резкой смене температур' },
+            { title: 'Сменная оптика', text: 'возможность установки диоптрий' }
+        ]
+    },
+    {
+        id: 4, category: 'orbit02', title: 'ОРБИТА_04 / CYBER', badge: 'коллекция 2026', price: '950 ₽',
+        descr: 'Широкая маска с панорамным обзором. Максимальная защита периферийного зрения для ночных существ.',
+        gallery: ['products/2026gls4.png', 'products/2026gls4.png', 'products/2026gls4.png'],
+        specs: [
+            { title: 'Панорамный обзор', text: 'линза моноблок без центральной перемычки' },
+            { title: 'Ударопрочность', text: 'поликарбонат военного стандарта защиты' },
+            { title: 'Титановый мост', text: 'надежная фиксация на переносице' }
+        ]
+    },
+
+    /* === КАТЕГОРИЯ: МЕРЧ === */
+    {
+        id: 5, category: 'merch', title: 'БРЕЛОК / 02', badge: 'наш мерч', price: '250 ₽',
+        descr: 'Металлический брелок. Идеальный аксессуар для рюкзака, ключей или обвеса.',
+        gallery: ['products/merch1.png', 'products/merch1.png'],
+        specs: [
+            { title: 'Горячая эмаль', text: 'яркие цвета, которые не тускнеют годами' },
+            { title: 'Надежный замок', text: 'бабочка-фиксатор защитит от случайной потери' },
+            { title: 'Металлический сплав', text: 'надежная основа, которая не гнется' }
+        ]
+    },
+    {
+        id: 6, category: 'merch', title: 'БРЕЛОК / 01', badge: 'наш мерч', price: '260 ₽',
+        descr: 'Металлический брелок. Идеальный аксессуар для рюкзака, ключей или обвеса.',
+        gallery: ['products/merch2.png', 'products/merch2.png'],
+        specs: [
+            { title: 'Горячая эмаль', text: 'яркие цвета, которые не тускнеют годами' },
+            { title: 'Надежный замок', text: 'бабочка-фиксатор защитит от случайной потери' },
+            { title: 'Металлический сплав', text: 'надежная основа, которая не гнется' }
+        ]
+    },
+    {
+        id: 7, category: 'merch', title: 'ШОППЕР BAT-PATTERN', badge: 'наш мерч', price: '1200 ₽',
+        descr: 'Вместительный тканевый шоппер из плотного хлопка с уникальным паттерном крыльев Дэйбэт.',
+        gallery: ['products/merch3.png', 'products/merch3.png'],
+        specs: [
+            { title: '100% Хлопок', text: 'сверхплотная парусиновая ткань' },
+            { title: 'Шелкография', text: 'принт выдерживает до 100 стирок' },
+            { title: 'Внутренний карман', text: 'удобный отсек под ключи и смартфон' }
+        ]
+    },
+
+    /* === КАТЕГОРИЯ: ЗАЩИТА ОТ СОЛНЦА === */
+    {
+        id: 8, category: 'sun', title: 'SUNBLOCKER _01', badge: 'защита от солнца', price: '500 ₽',
+        descr: 'Классическая спортивная форма в футуристичном прочтении бренда Дэйбэт. Для ярких лучей.',
+        gallery: ['products/sun1.png', 'products/sun1.png'],
+        specs: [
+            { title: 'Защита UV-400', text: 'отсекает 100% опасного солнечного излучения' },
+            { title: 'Олеофобный слой', text: 'линзы отталкивают жир, воду и грязь' },
+            { title: 'Ацетат целлюлозы', text: 'гипоаллергенный прочный пластик каркаса' }
+        ]
+    },
+    {
+        id: 9, category: 'sun', title: 'SUNBLOCKER _02 CHROMIUM', badge: 'защита от солнца', price: '650 ₽',
+        descr: 'Агрессивные аэродинамичные очки с серебряными зеркальными стеклами для летних фестивалей.',
+        gallery: ['products/sun2.png', 'products/sun2.png'],
+        specs: [
+            { title: 'Зеркальный щит', text: 'скрывает глаза и гасит ослепляющий свет' },
+            { title: 'Прорезиненный упор', text: 'очки не спадают при беге или танцах' },
+            { title: 'Вентиляция', text: 'боковые прорези исключают запотевание' }
+        ]
+    },
+    {
+        id: 10, category: 'sun', title: 'SUNBLOCKER _03 ACID', badge: 'защита от солнца', price: '700 ₽',
+        descr: 'Экстравагантная модель с фиолетовым отливом стекол. Для тех, кто привык ловить взгляды.',
+        gallery: ['products/sun3.png', 'products/sun3.png'],
+        specs: [
+            { title: 'Градиентный фильтр', text: 'мягкий переход цвета для комфорта глаз' },
+            { title: 'Облегченный мост', text: 'минимальное давление на переносицу' },
+            { title: 'Стальной шарнир', text: 'семивитковое прочное крепление дужек' }
+        ]
+    },
+    {
+        id: 11, category: 'sun', title: 'SUNBLOCKER _04 STEALTH', badge: 'защита от солнца', price: '850 ₽',
+        descr: 'Угловатый граненый силуэт в глубоком матовом черном исполнении. Стиль скрытности.',
+        gallery: ['products/sun4.png', 'products/sun4.png'],
+        specs: [
+            { title: 'Матовый карбон', text: 'корпус из авиационного легкого углеволокна' },
+            { title: 'Infra-Red защита', text: 'фильтрация теплового инфракрасного излучения' },
+            { title: 'Анатомический изгиб', text: 'плотное прилегание для защиты от ветра' }
+        ]
+    },
+
+    /* === КАТЕГОРИЯ: КОЛЛЕКЦИИ 2025 === */
+    {
+        id: 12, category: 'col2025', title: 'РЕТРО ОРБИТА _25', badge: 'коллекция 2025', price: '400 ₽',
+        descr: 'Первая культовая модель бренда, с которой началась история обтекаемых форм Дэйбэт.',
+        gallery: ['products/2025gls1.png', 'products/2025gls1.png'],
+        specs: [
+            { title: 'Историческая ценность', text: 'базовая модель первой линейки бренда' },
+            { title: 'Классический овал', text: 'универсальная посадка для любого типа лица' },
+            { title: 'Линзы CR-39', text: 'чистая органика с высокой прозрачностью' }
+        ]
+    },
+    {
+        id: 13, category: 'col2025', title: 'ХРОМ ОРБИТА _25', badge: 'коллекция 2025', price: '450 ₽',
+        descr: 'Лимитированное переиздание классики 2025 года в футуристичном хромированном корпусе.',
+        gallery: ['products/2025gls2.png', 'products/2025gls2.png'],
+        specs: [
+            { title: 'Хром-эффект', text: 'глянцевое зеркальное покрытие рамки' },
+            { title: 'Защита от царапин', text: 'дополнительный лаковый слой Hard-Coat' },
+            { title: 'Компактность', text: 'утонченные облегченные дужки' }
+        ]
+    },
+    {
+        id: 14, category: 'col2025', title: 'НЕОН ОРБИТА _25', badge: 'коллекция 2025', price: '550 ₽',
+        descr: 'Модель с полупрозрачным фиолетовым пластиком, ставшая визитной карточкой Школы Дизайна.',
+        gallery: ['products/2025gls3.png', 'products/2025gls3.png'],
+        specs: [
+            { title: 'Свечение', text: 'пластик слегка накапливает свет и мерцает в темноте' },
+            { title: 'UV-Фильтр', text: 'базовая защита глаз для повседневной носки' },
+            { title: 'В комплекте мешок', text: 'мягкая микрофибра для очистки стекол' }
+        ]
+    },
+
+    /* === КАТЕГОРИЯ: АКСЕССУАРЫ === */
+    {
+        id: 15, category: 'accessories', title: 'ЦЕПОЧКА ТЕМНАЯ', badge: 'аксессуары', price: '300 ₽',
+        descr: 'Универсальная темная цепочка. Подчеркивает геометрию оправы и обеспечивает комфортное ношение.',
+        gallery: ['products/acc1.png', 'products/acc1.png'],
+        specs: [
+            { title: 'EVA-Материал', text: 'не темнеет от влаги и времени' },
+            { title: 'Защита', text: 'предотвращает падение очков' },
+            { title: 'Стиль', text: 'акцентный аксессуар для образа' }
+        ]
+    },
+    {
+        id: 16, category: 'accessories', title: 'МЯГКАЯ ЦЕПОЧКА WING', badge: 'аксессуары', price: '350 ₽',
+        descr: 'Массивная цепочка крупного плетения из нержавеющей стали для надежной фиксации очков на шее.',
+        gallery: ['products/acc2.png', 'products/acc2.png'],
+        specs: [
+            { title: 'Медицинская сталь', text: 'не темнеет от влаги и не вызывает аллергии' },
+            { title: 'Силиконовые петли', text: 'крепко обжимают дужки любой толщины' },
+            { title: 'Длина 70 см', text: 'оптимальный размер для комфортного ношения' }
+        ]
+    },
+    {
+        id: 17, category: 'accessories', title: 'ЦЕПОЧКА ТЕМНАЯ', badge: 'аксессуары', price: '200 ₽',
+        descr: 'Яркий оранжевый текстильный шнурок с фиксатором длины. Спортивный стиль для активного движения.',
+        gallery: ['products/acc3.png', 'products/acc3.png'],
+        specs: [
+            { title: 'Премиум замок', text: 'надежная фиксация на дужках' },
+            { title: 'Универсальность', text: 'подходит к любым моделям' },
+            { title: 'Легкость', text: 'вес цепочки практически не ощущается' }
+        ]
+    },
+    {
+        id: 18,
+        category: 'accessories',
+        title: 'ФУТЛЯР BAT-BOX ORANGE',
+        badge: 'аксессуары',
+        descr: 'Жесткий защитный кейс в нашем главном фирменном оранжевом цвете. Спасет очки от любых падений.',
+        price: '300 ₽',
+        gallery: ['products/acc4.png', 'products/acc4.png'],
+        specs: [
+            { title: 'Прочный сплав', text: 'жесткий каркас держит удар до 15 кг' },
+            { title: 'Мягкий бархат', text: 'внутренняя обивка исключает появление царапин' },
+            { title: 'Карабин', text: 'позволяет крепить чехол к рюкзаку или ремню' }
+        ]
+    }
+];
+
+// ЛОГИКА СБОРКИ СТРАНИЦЫ
+const urlParams = new URLSearchParams(window.location.search);
+const productId = parseInt(urlParams.get('id')) || 1; // Если ID нет, откроет 1-й товар
+
+// Ищем товар в базе
+const product = productsDatabase.find(item => item.id === productId);
+
+if (product) {
+    // Подставляем текстовые данные
+    document.getElementById('prod-title').innerText = product.title;
+    document.getElementById('prod-badge').innerText = product.badge;
+    document.getElementById('prod-descr').innerText = product.descr;
+    document.getElementById('prod-price').innerText = product.price;
+
+    // Подставляем характеристики снизу
+    product.specs.forEach((spec, index) => {
+        document.getElementById(`spec-title-${index + 1}`).innerText = spec.title;
+        document.getElementById(`spec-text-${index + 1}`).innerText = spec.text;
+    });
+
+    // Выводим главную фотку
+    const mainImg = document.getElementById('prod-main-img');
+    mainImg.src = product.gallery[0];
+
+    // Выводим миниатюры ракурсов в галерею
+    const thumbsContainer = document.getElementById('prod-thumbs');
+    product.gallery.forEach((imgUrl, index) => {
+        const thumbHtml = `
+            <div class="product-single__thumb-item ${index === 0 ? 'active' : ''}">
+                <img src="${imgUrl}" alt="Ракурс">
+            </div>
+        `;
+        thumbsContainer.insertAdjacentHTML('beforeend', thumbHtml);
+    });
+
+    // Интерактив галереи: клик по миниатюре меняет главную фотку
+    const thumbs = document.querySelectorAll('.product-single__thumb-item');
+    thumbs.forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            thumbs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            mainImg.src = this.querySelector('img').src;
+        });
+    });
+
+const popup = document.getElementById('order-popup');
+const closeBtn = document.getElementById('popup-close');
+const agreementCheckbox = document.getElementById('form-agreement');
+const submitBtn = document.getElementById('form-submit-btn');
+const orderForm = document.getElementById('main-order-form');
+const phoneInput = document.getElementById('form-phone');
+
+const step1 = document.getElementById('popup-step-1');
+const step2 = document.getElementById('popup-step-2');
+
+// Привязываем открытие окна к кнопке КУПИТЬ
+// Так как кнопка генерируется динамически или лежит в коде, найдем её по классу:
+document.querySelector('.product-single__buy-btn').addEventListener('click', function(e) {
+    e.preventDefault();
+    // Сбрасываем этапы к первому шагу при каждом открытии
+    step1.classList.remove('popup-step--hidden');
+    step2.classList.add('popup-step--hidden');
+    orderForm.reset();
+    submitBtn.classList.add('disabled');
+    submitBtn.disabled = true;
+    
+    // Показываем окно
+    popup.classList.add('popup-overlay--active');
+});
+
+// Закрытие окна при клике на крестик
+closeBtn.addEventListener('click', () => popup.classList.remove('popup-overlay--active'));
+
+// Закрытие окна при клике на темную область вокруг формы
+popup.addEventListener('click', (e) => {
+    if (e.target === popup) popup.classList.remove('popup-overlay--active');
+});
+
+// ЛОГИКА ГАЛОЧКИ: Активация / Деактивация оранжевой кнопки
+agreementCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        submitBtn.classList.remove('disabled');
+        submitBtn.disabled = false; // Кнопка становится оранжевой и кликабельной
+    } else {
+        submitBtn.classList.add('disabled');
+        submitBtn.disabled = true; // Снова серая и заблокированная
+    }
+});
+
+// УМНАЯ МАСКА ДЛЯ ДИЗАЙНЕРСКОГО ВВОДА ТЕЛЕФОНА (+7)
+phoneInput.addEventListener('input', function(e) {
+    let inputText = this.value.replace(/\D/g, ''); // Удаляем всё, кроме цифр
+    let formattedText = '';
+
+    if (!inputText) {
+        this.value = '';
+        return;
+    }
+
+    // Если первая цифра 7 или 8, убираем ее для маски
+    if (inputText[0] === '7' || inputText[0] === '8') {
+        inputText = inputText.substring(1);
+    }
+
+    // Собираем шаблон маски на лету
+    formattedText = '+7 ';
+    if (inputText.length > 0) formattedText += '(' + inputText.substring(0, 3);
+    if (inputText.length >= 3) formattedText += ') ';
+    if (inputText.length > 3) formattedText += inputText.substring(3, 6);
+    if (inputText.length >= 6) formattedText += '-' + inputText.substring(6, 8);
+    if (inputText.length >= 8) formattedText += '-' + inputText.substring(8, 10);
+
+    this.value = formattedText;
+});
+
+// Блокируем стирание префикса +7 кнопкой Backspace
+phoneInput.addEventListener('keydown', function(e) {
+    if (e.keyCode === 8 && this.value.length <= 4) {
+        this.value = '';
+    }
+});
+
+// ФЕЙКОВАЯ ОТПРАВКА: Переход на шаг 2 («Мы с вами свяжемся»)
+orderForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Запрещаем странице перезагружаться
+    
+    // Плавно скрываем форму и выводим сообщение об успехе
+    step1.classList.add('popup-step--hidden');
+    step2.classList.remove('popup-step--hidden');
+});
+}
+</script>
+
+
+<script>
+// ЛОГИКА МОБИЛЬНОГО БУРГЕР-МЕНЮ
+const burgerBtn = document.getElementById('burger-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const bodyElement = document.body;
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+        // Переключаем класс анимации палочек в крестик
+        this.classList.toggle('burger--active');
+        // Переключаем выезд панели меню
+        mobileMenu.classList.toggle('menu--open');
+        // Блокируем прокрутку сайта на фоне, пока открыто меню
+        bodyElement.classList.toggle('no-scroll');
+    });
+
+    // Закрываем меню, если пользователь кликнул на ссылку
+    const menuLinks = mobileMenu.querySelectorAll('.menu__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('burger--active');
+            mobileMenu.classList.remove('menu--open');
+            bodyElement.classList.remove('no-scroll');
+        });
+    });
+}
+</script>
+
+<script>
+/* =========================
+   Product page: horizontal thumbs (вставьте после генерации миниатюр в product.html)
+   ========================= */
+(function() {
+  const thumbsContainer = document.getElementById('prod-thumbs');
+  if (!thumbsContainer) return;
+
+  // Apply horizontal scroller styles (only when on mobile)
+  function styleThumbs() {
+    const mq = window.matchMedia('(max-width: 768px)');
+    if (mq.matches) {
+      thumbsContainer.style.display = 'flex';
+      thumbsContainer.style.gap = '12px';
+      thumbsContainer.style.overflowX = 'auto';
+      thumbsContainer.style.padding = '8px 4px';
+      thumbsContainer.style.webkitOverflowScrolling = 'touch';
+      thumbsContainer.querySelectorAll('.product-single__thumb-item').forEach(t => {
+        t.style.flex = '0 0 auto';
+      });
+    } else {
+      // restore defaults on larger screens
+      thumbsContainer.style.display = '';
+      thumbsContainer.style.gap = '';
+      thumbsContainer.style.overflowX = '';
+      thumbsContainer.style.padding = '';
+      thumbsContainer.querySelectorAll('.product-single__thumb-item').forEach(t => {
+        t.style.flex = '';
+      });
+    }
+  }
+
+  styleThumbs();
+  window.addEventListener('resize', styleThumbs);
+})();
+</script>
+</body>
+</html>

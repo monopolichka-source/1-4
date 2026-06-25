@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ШАПКА -->
+<header class="header">
+    <div class="container header__container">
+        
+        <!-- Логотип -->
+        <div class="header__logo-wrapper">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Логотип" class="logo__img">
+            </a>
+        </div>
+
+        <!-- Кнопка гамбургера (видна только на мобилках) -->
+        <button class="header__burger-btn" id="burger-toggle" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Навигация (на мобилках будет выезжать сбоку) -->
+        <nav class="menu header__menu-wrapper" id="mobile-menu">
+            <ul class="menu__list">
+                <li class="menu__item"><a href="about.html" class="menu__link">о нас</a></li>
+                <li class="menu__item"><a href="events.html" class="menu__link">события</a></li>
+                <li class="menu__item"><a href="catalog-view.html" class="menu__link">каталог</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    </header>
+<section class="about-hero">
+    <div class="container">
+        <div class="about-hero__card">
+            <div class="about-hero__content">
+                <h1 class="about-hero__title">О НАC</h1>
+                <p class="about-hero__text">
+                    Дэйбэт — это больше чем аксессуар. Это взгляд в светлое будущее, созданное для тех, кто не боится выделяться.
+                </p>
+            </div>
+            <div class="about-hero__image-wrapper">
+                <img src="assets/about-bg.png" alt="Футуристичные очки Дэйбэт" class="about-hero__img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="factory-section">
+    <div class="container">
+        <div class="factory-grid">
+            <div class="factory-image">
+                <img src="assets/factory.png" alt="Производство очков Дэйбэт" class="factory-image__img">
+            </div>
+            <div class="factory-card">
+                <div class="factory-card__top">
+                    <div class="factory-card__content">
+                        <h2 class="factory-card__title">НАШ ЗАВОД</h2>
+                        <p class="factory-card__text">
+                            мы разрабатываем и производим очки на собственном заводе, используя передовые технологии и ручной контроль качества на каждом этапе
+                        </p>
+                    </div>
+                    <div class="factory-card__blueprint">
+                        <img src="assets/blueprint.png" alt="Чертеж очков" class="factory-card__blueprint-img">
+                    </div>
+                </div>
+                <div class="factory-stats">
+                    <div class="factory-stats__item">
+                        <span class="factory-stats__num">1200 м²</span>
+                        <p class="factory-stats__desc">площадь производства</p>
+                    </div>
+                    <div class="factory-stats__item">
+                        <span class="factory-stats__num">45</span>
+                        <p class="factory-stats__desc">высокоточных станков</p>
+                    </div>
+                    <div class="factory-stats__item">
+                        <span class="factory-stats__num">100%</span>
+                        <p class="factory-stats__desc">контроль качества</p>
+                    </div>
+                </div>
+                    <a href="factory.html" class="factory-card__btn-arrow" aria-label="Подробнее о заводе">
+                        <img src="assets/arrow.svg" alt=">">
+                    </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-features-section">
+    <div class="container">
+        <div class="about-features-grid">
+            <div class="feature-card ui-card">
+                <h2 class="feature-card__title">ИСТОРИЯ БРЕНДА</h2>
+                <div class="feature-card__body">
+                    <p class="feature-card__text">Дэйбэт появился из идеи создать идеальные очки для тех, кто тянется к свету.</p>
+                    <p class="feature-card__text">с 2025 года мы объединяем технологии, материалы и дизайн, чтобы создавать будущее — уже сегодня.</p>
+                </div>
+                <div class="feature-card__footer">
+                    <span class="feature-card__stat-num">2025</span>
+                    <p class="feature-card__stat-desc">год основания</p>
+                </div>
+            </div>
+            <div class="feature-card feature-card--sketches ui-card">
+                <div class="sketch-wrapper"><img src="assets/sketch1.png" alt="Чертеж очков вид спереди"></div>
+                <div class="sketch-wrapper"><img src="assets/sketch2.png" alt="Чертеж очков вид сверху"></div>
+                <div class="sketch-wrapper"><img src="assets/sketch3.png" alt="Чертеж очков вид сбоку"></div>
+            </div>
+            <div class="feature-card ui-card">
+                <h2 class="feature-card__title">ДИЗАЙН И ТЕХНОЛОГИИ</h2>
+                <div class="feature-card__body">
+                    <p class="feature-card__text">Мы используем титан, ацетат и инновационные полимеры. Линзы с UV-защитой.</p>
+                    <p class="feature-card__text">Конструкции, созданные для лёгкости, прочности и комфорта.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-manifesto-section">
+    <div class="container">
+        <div class="manifesto-block">
+            <p class="manifesto-block__text">
+                МЫ НЕ ПРОСТО ДЕЛАЕМ ОЧКИ. МЫ СОЗДАЁМ ИНСТРУМЕНТ ДЛЯ ТЕХ, КТО СМОТРИТ ДАЛЬШЕ
+            </p>
+        </div>
+    </div>
+</section>
+<section class="about-values-section">
+    <div class="container">
+        <div class="values-grid ui-card">
+            
+            <div class="values-grid__title-col">
+                <h2 class="values-grid__main-title">НАШИ ЦЕННОСТИ</h2>
+            </div>
+            
+            <div class="values-grid__items-col">
+                <div class="value-item">
+                    <h3 class="value-item__title">КОМФОРТ</h3>
+                    <p class="value-item__desc">идеальная посадка</p>
+                </div>
+                <div class="value-item">
+                    <h3 class="value-item__title">КАЧЕСТВО</h3>
+                    <p class="value-item__desc">только качественные и отобранные материалы</p>
+                </div>
+                <div class="value-item">
+                    <h3 class="value-item__title">СВОБОДА</h3>
+                    <p class="value-item__desc">очки для тех, кто выбирает свой путь</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- ПОДВАЛ  -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__col">
+                <h4 class="footer__title">Дэйбэт</h4>
+                <ul class="footer__list">
+                    <li><a href="about.html" class="footer__link">О нас</a></li>
+                    <li><a href="events.html" class="footer__link">События</a></li>
+                    <li><a href="catalog.html" class="footer__link">Каталог</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Контакты</h4>
+                <ul class="footer__list">
+                    <li><a href="tel:+79001001010" class="footer__link">+7 900 100-10-10</a></li>
+                    <li><a href="mailto:optika@Batday.ru" class="footer__link">optika@Batday.ru</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 class="footer__title">Офис</h4>
+                <p class="footer__text">г. Летучий Новгород</p>
+                <p class="footer__text">ул. Клыковная, д. 666</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__credits">
+                <p>Выполнила <span class="footer__highlight">Пензина Анастасия</span></p>
+                <p>Куратор <span class="footer__highlight">Евдокимов Стас</span></p>
+                <p>Технолог <span class="footer__highlight">Сыров Юрий</span></p>
+            </div>
+            <div class="footer__group">
+                <p>Группа: <span class="footer__highlight">25ндиз-2</span></p>
+            </div>
+            <div class="footer__logo">
+                <img src="assets/shd.svg" alt="Школа дизайна" class="footer__logo-img">
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+// ЛОГИКА МОБИЛЬНОГО БУРГЕР-МЕНЮ
+const burgerBtn = document.getElementById('burger-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const bodyElement = document.body;
+
+if (burgerBtn && mobileMenu) {
+    burgerBtn.addEventListener('click', function() {
+        // Переключаем класс анимации палочек в крестик
+        this.classList.toggle('burger--active');
+        // Переключаем выезд панели меню
+        mobileMenu.classList.toggle('menu--open');
+        // Блокируем прокрутку сайта на фоне, пока открыто меню
+        bodyElement.classList.toggle('no-scroll');
+    });
+
+    // Закрываем меню, если пользователь кликнул на ссылку
+    const menuLinks = mobileMenu.querySelectorAll('.menu__link');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            burgerBtn.classList.remove('burger--active');
+            mobileMenu.classList.remove('menu--open');
+            bodyElement.classList.remove('no-scroll');
+        });
+    });
+}
+</script>
+</body>
+</html>
